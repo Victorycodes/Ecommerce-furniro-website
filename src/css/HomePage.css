@@ -1,0 +1,270 @@
+.newArrival {
+  background-color: #fff3e3;
+  width: 42%;
+  position: absolute;
+  top: 260px;
+  right: 100px;
+  padding: 20px 25px 35px 30px;
+  border-radius: 10px;
+}
+
+.newArrivalTheme {
+  font-weight: bold;
+  letter-spacing: 3.5px;
+}
+
+.newArrivalDesc {
+  font-size: 52px;
+  font-weight: bold;
+  margin: 0px;
+  width: 80%;
+}
+
+.newArrivalPara {
+  font-size: 18px;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+}
+
+.homeBackground {
+  width: 100%;
+  height: 716px;
+}
+
+.homeBtn {
+  color: white;
+  border: none;
+  padding: 25px 50px;
+}
+
+.subTopic {
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+.rangeWrapperImgs {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 50px 30px 50px 30px;
+}
+
+.rangeWrapperDesc {
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  margin: 15px 10px 0px 10px;
+  font-size: 24px;
+}
+
+.rooms {
+  height: 480px;
+}
+
+.rows {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0px 55px 0px 55px;
+}
+
+.name {
+  font-weight: 700;
+  font-size: 24px;
+  color: #3a3a3a;
+  margin: 0px;
+}
+
+.nameDesc {
+  font-size: 16px;
+  font-weight: normal;
+  color: #898989;
+}
+
+.mainPrice {
+  font-size: 20px;
+  font-weight: 700;
+  color: #3a3a3a;
+}
+
+.slashPrice {
+  font-size: 16px;
+  font-weight: normal;
+  color: #b0b0b0;
+}
+
+.imageDetails {
+  background-color: #f4f5f7;
+  padding: 6px 8px 8px 10px;
+}
+
+.firstRow {
+  margin-bottom: 40px;
+}
+
+.image-container {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.image-container img {
+  display: block;
+  width: 100%;
+  transition: opacity 0.3s ease;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(51, 51, 51, 0.5);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.add-to-cart-btn {
+  background-color: #ffffff;
+  border: none;
+  color: #b88e2f;
+  padding: 13px 60px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.interactIcon {
+  display: flex;
+  margin-top: 25px;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.interactIconList {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  cursor: pointer;
+}
+
+.socialIcon {
+  width: 12px;
+  height: 15px;
+}
+
+.interactionIconDesc {
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.loveIcon {
+  margin-top: 2px;
+  cursor: pointer;
+}
+
+.showMoreBtn {
+  background-color: white;
+  color: #b88e2f;
+  border: 2px solid #b88e2f;
+  cursor: pointer;
+  padding: 12px 50px;
+  display: block;
+}
+
+.ourProductBtn {
+  display: flex;
+  justify-content: center;
+}
+
+.rangeWrapperImg {
+  display: flex;
+  flex-direction: column;
+}
+
+.image-container:hover .overlay {
+  opacity: 0.8;
+}
+
+.roomInspiration {
+  background-color: #fcf8f3;
+  display: flex;
+  align-items: center;
+  padding: 35px 0px;
+  margin-top: 40px;
+}
+
+.exploreMoreBtn {
+  background-color: #b88e2f;
+  color: #ffffff;
+  outline: none;
+  border: none;
+  padding: 13px 35px;
+  width: 70%;
+}
+
+.roomInspirationHead {
+  font-size: 40px;
+}
+
+.roomInspirationDesc {
+  margin-top: 0px;
+  font-size: 16px;
+}
+
+.roomInspirationInfo {
+  width: 70%;
+}
+
+.roomInspirationWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.roomInspirationImage {
+  display: flex;
+  gap: 25px;
+}
+
+.room1Info {
+  font-weight: 900;
+  font-size: 28px;
+  color: #3a3a3a;
+}
+
+.room1Wrapper {
+  position: relative;
+}
+
+.roomImage {
+  width: 100%;
+  height: auto;
+}
+
+.room1Wrapper .room1Desc {
+  position: absolute;
+  bottom: -280%;
+}
+
+.room1Desc {
+  position: absolute;
+  bottom: 20px;
+  width: 55%;
+  right: 40%;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 20px 20px;
+}
+
+.roomArrowIcon {
+  background-color: #b88e2f;
+  position: absolute;
+  right: 24.6%;
+  bottom: 20px;
+  padding: 15px 20px;
+}

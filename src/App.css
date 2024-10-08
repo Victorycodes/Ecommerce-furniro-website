@@ -1,0 +1,31 @@
+.colorGrey {
+  color: #333333;
+}
+
+.colorGrey2 {
+  color: #666666;
+}
+
+.colorGrey3 {
+  color: #3a3a3a;
+}
+
+.colorGrey4 {
+    color: #616161;
+}
+
+.colorCoraal {
+  color: #b88e2f;
+}
+
+.bgCoraal {
+  background-color: #b88e2f;
+}
+
+.textCenter {
+  text-align: center;
+}
+
+li {
+  cursor: pointer;
+}

@@ -1,0 +1,26 @@
+.homeList {
+    gap: 45px;
+    display: flex;
+    list-style-type: none;
+}
+
+.headerWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.homeLogo {
+    width: 185px;
+    height: 41px;
+}
+
+.homeIcon {
+    width: 28px;
+    height: 28px;
+}
+
+.headerIcon {
+    display: flex;
+    gap: 30px;
+}
