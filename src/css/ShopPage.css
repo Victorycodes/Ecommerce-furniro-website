@@ -1,0 +1,29 @@
+.nextImg {
+  background-color: #f9f1e7;
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: black;
+}
+
+.nextImg:active {
+  background-color: #b88e2f;
+  color: #ffffff;
+}
+
+.shopWrapperImg {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.featureTopic {
+  font-size: 25px;
+  font-weight: 600;
+  color: #242424;
+}
+
+.featureDesc {
+  font-size: 20px;
+  font-weight: 500;
+  color: #898989;
+}

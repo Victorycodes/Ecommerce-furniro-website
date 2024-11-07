@@ -4,7 +4,7 @@ import FooterLogo from "../assets/images/footerLogo.svg";
 const Footer = () => {
   return (
     <>
-      <div className="mt-[50px]">
+      <div>
         <hr />
         <div className="m-[auto] w-4/5">
           <div className="flex justify-between mt-[50px]">

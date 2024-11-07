@@ -1,46 +1,101 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Logo from "../assets/images/logo.png";
 import Profile from "../assets/images/account-alert-outline.png";
 import Search from "../assets/images/icons_search.png";
 import Heart from "../assets/images/icons_heart.png";
 import Cart from "../assets/images/shopping-cart.png";
 import "../css/Header.css";
+import { useNavigate } from "react-router-dom";
+import Modal from "./Modal";
 
-const Header = ({ setCurrentPage }) => {
+const Header = () => {
+  const navigate = useNavigate();
+  const [cart, setCart] = useState([]);
+  const [showModal, setShowModal] = useState(false);
+
+  useEffect(() => {
+    const savedCart = localStorage.getItem("cart")
+      ? JSON.parse(localStorage.getItem("cart"))
+      : [];
+    setCart(savedCart);
+  }, []);
+
+  const removeItem = (id) => {
+    const updatedCart = cart.filter((item) => item.id !== id);
+    setCart(updatedCart);
+    localStorage.setItem("cart", JSON.stringify(updatedCart));
+  };
+
+  const clearCart = () => {
+    localStorage.removeItem("cart");
+    setCart({});
+    setShowModal(false);
+  };
+
+  const openModal = () => {
+    setShowModal(true);
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
+  };
+
   return (
-    <header className="headerWrapper">
+    <header className="headerWrapper relative">
       <div>
         <img src={Logo} alt="Logo" className="homeLogo" />
       </div>
       <nav>
         <ul className="homeList my-[20px]">
-          <button onClick={() => setCurrentPage("home")}>
+          <button onClick={() => navigate("/")}>
             <li>Home</li>
           </button>
-          <button onClick={() => setCurrentPage("shop")}>
+          <button onClick={() => navigate("/shop")}>
             <li>Shop</li>
           </button>
-          <button onClick={() => setCurrentPage("about")}>
+          <button onClick={() => navigate("/about")}>
             <li>About</li>
           </button>
-          <button onClick={() => setCurrentPage("contact")}>
+          <button onClick={() => navigate("/contact")}>
             <li>Contact Us</li>
           </button>
         </ul>
       </nav>
       <div className="headerIcon">
-        <img
-          src={Profile}
-          alt="Profile icon"
-          className="homeIcon cursor-pointer"
-        />
-        <img
-          src={Search}
-          alt="Search icon"
-          className="homeIcon cursor-pointer"
-        />
-        <img src={Heart} alt="Heart icon" className="homeIcon cursor-pointer" />
-        <img src={Cart} alt="Cart icon" className="homeIcon cursor-pointer" />
+        <div className="headerIcon">
+          <img
+            src={Profile}
+            alt="Profile icon"
+            className="homeIcon cursor-pointer"
+          />
+          <img
+            src={Search}
+            alt="Search icon"
+            className="homeIcon cursor-pointer"
+          />
+          <img
+            src={Heart}
+            alt="Heart icon"
+            className="homeIcon cursor-pointer"
+          />
+          <div className="flex">
+            <img
+              src={Cart}
+              alt="Cart icon"
+              onClick={openModal}
+              className="homeIcon cursor-pointer"
+            />
+            <div className="text-[red] text-[25px]">{cart.length}</div>
+          </div>
+        </div>
+        {showModal && (
+          <Modal
+            clearCart={clearCart}
+            removeItem={removeItem}
+            cart={cart}
+            closeModal={closeModal}
+          />
+        )}
       </div>
     </header>
   );

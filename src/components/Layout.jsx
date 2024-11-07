@@ -2,13 +2,16 @@ import React from "react";
 import "../css/Layout.css";
 import Header from "./Header";
 import Footer from "./Footer";
+import { Outlet } from "react-router-dom";
 
-const Layout = ({ children, setCurrentPage}) => {
+const Layout = () => {
   return (
     <div className="layout">
-      <Header setCurrentPage={setCurrentPage} />
+      <Header />
       <div>
-        <main>{children}</main>
+        <main>
+          <Outlet/>
+        </main>
       </div>
       <Footer />
     </div>
