@@ -52,10 +52,10 @@ const HomePage = () => {
         </div>
       </div>
       <div className="rangeWrapper">
-        <h1 className="text-3xl font-bold text-[#333333] subTopic mt-[40px]">
+        <h1 className="xl2:text-3xl text-[20px] font-bold text-[#333333] subTopic xl2:mt-[40px] mt-[10px]">
           Browse The Range
         </h1>
-        <p className="subTopic colorGrey2">
+        <p className="subTopic colorGrey2 xl2:w-[100%] w-[75%]">
           Lorem ipsum dolor sit amet, consectetur adipiscing
         </p>
         <div className="rangeWrapperImgs">
@@ -74,7 +74,7 @@ const HomePage = () => {
         </div>
       </div>
       <div className="ourProductWrapper">
-        <h1 className="text-3xl font-bold text-[#3A3A3A] subTopic mt-[40px] subTopic">
+        <h1 className="xl2:text-3xl text-[20px] font-bold text-[#3A3A3A] subTopic xl2:mt-[40px] mt-[10px] subTopic">
           Our Products
         </h1>
         <div className="rangeWrapperImg">
@@ -109,7 +109,7 @@ const HomePage = () => {
                             <p className="interactionIconDesc">Compare</p>
                           </div>
                           <div className="loveIcon">
-                            <img src={likeIcon} alt="like icon" />
+                            <img src={likeIcon} className="loveIconImg" alt="like icon" />
                           </div>
                         </div>
                       </div>

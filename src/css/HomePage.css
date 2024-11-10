@@ -6,7 +6,6 @@
   right: 100px;
   padding: 20px 25px 35px 30px;
   border-radius: 10px;
-  max-width: 643px;
 }
 
 .newArrivalTheme {
@@ -45,6 +44,7 @@
 
 .rangeWrapperImgs {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-evenly;
   margin: 50px 30px 50px 30px;
 }
@@ -56,6 +56,7 @@
   flex-direction: column;
   margin: 15px 10px 0px 10px;
   font-size: 24px;
+  flex: 0 0 calc(25% - 20px);
 }
 
 .rooms {
@@ -269,3 +270,132 @@
   bottom: 20px;
   padding: 15px 20px;
 }
+
+.gallery-container {
+  width: 100%;
+}
+
+.swiper-container {
+  display: block;
+}
+
+@media screen and (max-width: 768px) {
+  .homeBackground {
+    height: 300px;
+  }
+
+  .newArrival {
+    background-color: #fff3e3;
+    width: 60%;
+    position: absolute;
+    top: 115px;
+    right: 20px;
+    padding: 15px 15px 10px 15px;
+    border-radius: 10px;
+  }
+
+  .newArrivalTheme {
+    font-size: 14px;
+  }
+
+  .newArrivalDesc {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0px;
+    width: 80%;
+  }
+
+  .newArrivalPara {
+    font-size: 10px;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+  }
+
+  .homeBtn {
+    color: white;
+    border: none;
+    padding: 5px 25px;
+    border-radius: 10px;
+    font-size: 12px;
+  }
+
+  .subTopic {
+    margin: auto;
+  }
+
+  .rangeWrapperImgs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0 0 0;
+  }
+
+  .rooms {
+    width: 260px;
+    height: 235px;
+  }
+
+  .rangeWrapperDesc {
+    text-align: center;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    margin: 5px 0px 10px 0px;
+    font-size: 18px;
+  }
+
+  .firstRow {
+    margin-bottom: 5px;
+  }
+
+  .rows {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    display: grid;
+    gap: 20px;
+    margin: 0px 15px 0px 15px;
+  }
+
+  .name {
+    font-weight: 500;
+    font-size: 18px;
+  }
+
+  .nameDesc {
+    font-size: 11px;
+    font-weight: lighter;
+  }
+
+  .mainPrice {
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  .slashPrice {
+    font-size: 10px;
+    font-weight: normal;
+  }
+
+  .add-to-cart-btn {
+    padding: 8px 23px;
+    font-size: 12px;
+  }
+
+  .interactIcon {
+    margin-top: 5px;
+    gap: 5px;
+  }
+
+  .socialIcon {
+    height: 10px;
+  }
+
+  .interactionIconDesc {
+    font-size: 11px;
+  }
+
+  .loveIconImg {
+    height: 16px;
+  }
+}
+

@@ -1,26 +1,86 @@
 .homeList {
-    gap: 45px;
-    display: flex;
-    list-style-type: none;
+  gap: 45px;
+  display: flex;
+  list-style-type: none;
 }
 
 .headerWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.menuContent {
     display: flex;
-    align-items: center;
-    justify-content: space-around;
+    gap: 20px;
+    position: static;
+}
+
+.menuIcon {
+    display: none;
 }
 
 .homeLogo {
-    width: 185px;
-    height: 41px;
+  width: 185px;
+  height: 41px;
 }
 
 .homeIcon {
-    width: 28px;
-    height: 28px;
+  width: 28px;
+  height: 28px;
 }
 
 .headerIcon {
+  display: flex;
+  gap: 30px;
+}
+
+.desktopNav {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .menuIcon {
+    width: 25px;
+    height: 25px;
+    display: block;
+  }
+
+  .menuContent {
+    display: none;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    background-color: white;
+    flex-direction: column;
+  }
+
+  .menuContent.open {
     display: flex;
-    gap: 30px;
+  }
+
+  .menuContent ul {
+    list-style: none;
+  }
+
+  .menuContent li {
+    padding: 10px 0px;
+    cursor: pointer;
+  }
+
+  .homeLogo {
+    width: 80px;
+    height: 20px;
+  }
+
+  .homeIcon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .headerIcon {
+    align-items: center;
+  }
 }
