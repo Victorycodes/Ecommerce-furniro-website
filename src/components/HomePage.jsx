@@ -141,7 +141,7 @@ const HomePage = () => {
       <div className="roomInspiration">
         <div className="roomInspirationWrapper">
           <div className="roomInspirationInfo">
-            <h1 className="text-4xl font-bold colorGrey3 roomInspirationHead">
+            <h1 className="xl2:text-4xl text-[24px] xl2:font-bold font-semibold colorGrey3 roomInspirationHead">
               50+ Beautiful rooms inspiration
             </h1>
             <p className="colorGrey4 roomInspirationDesc">
@@ -152,10 +152,10 @@ const HomePage = () => {
           <button className="exploreMoreBtn">Explore More</button>
         </div>
         <div className="roomInspirationImage">
-          <div className="" style={{ position: "relative" }}>
+          <div className="relative">
             <img src={room1} alt="room one" />
             <div className="room1Desc">
-              <p className="colorGrey4 flex items-center gap-2">
+              <p className="colorGrey4 flex items-center xl2:gap-2 gap-1 xl2:text-[16px] text-[12px]">
                 01 <img src={Stroke} alt="" /> Bed Room
               </p>
               <p className="room1Info">Inner peace</p>
@@ -170,8 +170,8 @@ const HomePage = () => {
         </div>
       </div>
       <div className="textCenter">
-        <p className="colorGrey4 mt-[40px]">Share your setup with </p>
-        <h1 className="colorGrey3 text-3xl font-bold text-[#3A3A3A]">
+        <p className="colorGrey4 xl2:mt-[40px] mt-[20px] xl2:text-[16px] text-[14px]">Share your setup with </p>
+        <h1 className="colorGrey3 xl2:text-3xl text-[20px] xl2:font-bold font-semibold text-[#3A3A3A]">
           #FuniroFurniture
         </h1>
         <div className="mb-[50px]">

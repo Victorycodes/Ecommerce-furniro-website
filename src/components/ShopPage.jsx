@@ -44,19 +44,19 @@ const ShopPage = () => {
     <>
       <div>
         <img src={ShopBg} alt="" />
-        <div className="absolute left-[50%] top-[185px]">
-          <h1 className="text-center text-5xl	font-medium mb-[8px]">Shop</h1>
+        <div className="absolute xl2:left-[50%] left-[40%] xl2:top-[185px] top-[130px]">
+          <h1 className="text-center xl2:text-5xl text-[24px]	font-medium xl2:mb-[8px]">Shop</h1>
           <p className="flex items-center justify-center">
-            <span className="font-medium">Home</span>
+            <span className="font-medium xl2:text-[16px] text-[12px]">Home</span>
             <img className="h-[8px] w-[14px]" src={RightPointer} alt="" />
-            <span className="font-light">Shop</span>
+            <span className="font-light xl2:text-[16px] text-[12px]">Shop</span>
           </p>
         </div>
         <div className=" bg-[#F9F1E7]">
-          <div className="flex justify-around items-center mt-[-5px] py-[20px] max-w-[1236px] mx-auto">
-            <div className="flex items-center">
-              <div className="flex justify-around items-center gap-[30px]">
-                <div className="flex items-center gap-[15px]">
+          <div className="flex xl2:flex-row flex-col justify-around items-center mt-[-5px] py-[20px] max-w-[1236px] mx-auto">
+            <div className="flex items-center xl2:mt-[initial] mt-[50px]">
+              <div className="flex justify-around items-center xl2:gap-[30px] gap-[5px]">
+                <div className="flex items-center xl2:gap-[15px] gap-[5px]">
                   <img src={FilterIcon} alt="" />
                   <p className="text-[20px]">Filter</p>
                 </div>
@@ -68,27 +68,27 @@ const ShopPage = () => {
                 </div>
               </div>
               <div className="flex justify-around items-center">
-                <div className="mx-[30px]">
+                <div className="xl2:mx-[30px] mx-[10px]">
                   <img src={VerRule} alt="" />
                 </div>
                 <div>
-                  <p>Showing 1-16 of 32 results</p>
+                  <p className="xl2:text-[16px] text-[14px]">Showing 1-16 of 32 results</p>
                 </div>
               </div>
             </div>
             <div className="flex justify-around items-center">
               <form>
-                <label className="text-[20px] mr-[20px]">Show</label>
+                <label className="xl2:text-[20px] text-[14px] xl2:mr-[20px] mr-[5px]">Show</label>
                 <input
-                  className="w-[55px] h-[55px] text-center mr-[30px]"
+                  className="xl2:w-[55px] w-[20px] xl2:h-[55px] h-[20px] text-center xl2:mr-[30px] mr-[8px] xl2:text-[16px] text-[12px]"
                   type="number"
                   name=""
                   id=""
                   placeholder="16"
                 />
-                <label className="text-[20px] mr-[20px]">Short by</label>
+                <label className="xl2:text-[20px] text-[14px] xl2:mr-[20px] mr-[5px]">Short by</label>
                 <input
-                  className="w-[188px] h-[55px] text-center"
+                  className="xl2:w-[188px] w-[100px] xl2:h-[55px] h-[30px] text-center xl2:text-[16px] text-[12px]"
                   type="text"
                   name=""
                   id=""
@@ -99,7 +99,7 @@ const ShopPage = () => {
           </div>
         </div>
         <div className="max-w-[1236px] mx-auto">
-          <div className="shopWrapperImg grid grid-cols-4">
+          <div className="shopWrapperImg grid xl2:grid-cols-4 grid-cols-2">
             {getCurrentImages().map((image, index) => (
               <div
                 key={index}

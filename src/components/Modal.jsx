@@ -2,7 +2,7 @@ import React from "react";
 import { products } from "../utils/products";
 import CloseCart from "../assets/images/icons/closeCart.svg";
 import RemoveIcon from "./RemoveIcon";
-import "../css/Modal.css"
+import "../css/Modal.css";
 
 const Modal = ({ removeItem, closeModal, cart }) => {
   const product = products;
@@ -51,6 +51,24 @@ const Modal = ({ removeItem, closeModal, cart }) => {
                 ))
               )}
             </ul>
+          </div>
+          <div>
+            <div className="xl2:mb-[25px]">
+              <p>Subtotal</p>
+              <p></p>
+            </div>
+            <hr />
+            <div className="flex xl2:mt-[25px] justify-between">
+              <button className="text-[12px] py-[10px] px-[30px] rounded-[18px] border-[#000000] border-[1px] cursor-pointer">
+                Cart
+              </button>
+              <button className="text-[12px] py-[10px] px-[30px] rounded-[18px] border-[#000000] border-[1px] cursor-pointer">
+                Checkout
+              </button>
+              <button className="text-[12px] py-[10px] px-[30px] rounded-[18px] border-[#000000] border-[1px] cursor-pointer">
+                Comparison
+              </button>
+            </div>
           </div>
         </div>
       </div>

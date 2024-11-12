@@ -397,5 +397,56 @@
   .loveIconImg {
     height: 16px;
   }
-}
 
+  .showMoreBtn {
+    margin-top: 10px;
+    padding: 8px 35px;
+    font-size: 14px;
+  }
+
+  .roomInspiration {
+    padding: 15px 0px;
+    flex-direction: column;
+    margin-top: 25px;
+  }
+
+  .roomInspirationInfo {
+    width: 90%;
+  }
+
+  .roomInspirationWrapper {
+    align-items: flex-start;
+    margin: 0px 0px 20px 20px ;
+  }
+
+  .roomInspirationDesc {
+    font-size: 14px;
+  }
+
+  .exploreMoreBtn {
+    padding: 10px 0;
+    width: 50%;
+  }
+
+  .roomInspirationImage {
+    gap: 10px;
+  }
+
+  .room1Desc {
+    bottom: 0px;
+    width: 70%;
+    left: 105%;
+    padding: 10px;
+  }
+
+  .room1Info {
+    font-weight: 600;
+    font-size: 18px;
+  }
+
+  .roomArrowIcon {
+    right: -185px;
+    bottom: 0px;
+    padding: 15px;
+  }
+}

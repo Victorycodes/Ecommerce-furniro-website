@@ -11,13 +11,13 @@
 }
 
 .menuContent {
-    display: flex;
-    gap: 20px;
-    position: static;
+  display: flex;
+  gap: 20px;
+  position: static;
 }
 
 .menuIcon {
-    display: none;
+  display: none;
 }
 
 .homeLogo {
@@ -58,11 +58,16 @@
   }
 
   .menuContent.open {
+    height: 100vh;
+    width: 100%;
+    z-index: 999;
+    top: 37px;
     display: flex;
   }
 
   .menuContent ul {
     list-style: none;
+    flex-direction: column;
   }
 
   .menuContent li {
