@@ -23,18 +23,27 @@ const ProductDetails = () => {
   const handleShowMore = () => {
     setVisibleCount((prevCount) => prevCount + 4);
   };
-  const savedCart = localStorage.getItem("cart"); 
+  const savedCart = JSON.parse(localStorage.getItem("cart")) || [];
 
   const { id } = useParams();
-  const [cart, setCart] = useState(savedCart ? JSON.parse(savedCart) : []);
+  const [cart, setCart] = useState(Array.isArray(savedCart) ? savedCart : []);
+
   const product = products.find((item) => item.id.toString() === id);
-  const itemInCart = product ? cart[product.alt] : null;
+const itemInCart = cart.find((item) => item.id === product?.id);
 
-  const addToCart = (product) => {
-    cart.push(product)
-    localStorage.setItem("cart", JSON.stringify(cart));
+const addToCart = (product) => {
+  const updatedCart = [...cart];
+  const itemIndex = updatedCart.findIndex((item) => item.id === product.id);
 
-  };
+  if (itemIndex !== -1) {
+    updatedCart[itemIndex].quantity += 1;
+  } else {
+    updatedCart.push({ ...product, quantity: 1 });
+  }
+
+  setCart(updatedCart);
+  localStorage.setItem("cart", JSON.stringify(updatedCart));
+};
   
   const [selectedImage, setSelectedImage] = useState(product?.src);
 
@@ -42,35 +51,23 @@ const ProductDetails = () => {
     setSelectedImage(src);
   };
 
-  const increment = (alt, name, price, image) => {
-    setCart((prev) => ({
-      ...prev,
-      [alt]: {
-        ...prev[alt],
-        quantity: (prev[alt]?.quantity || 0) + 1,
-        name,
-        price,
-        image,
-      },
-    }));
+  const increment = (id) => {
+    const updatedCart = cart.map((item) => 
+      item.id === id ? { ...item, quantity: item.quantity + 1 } : item
+    );
+    setCart(updatedCart);
+    localStorage.setItem("cart", JSON.stringify(updatedCart));
   };
 
-  const decrement = (alt) => {
-    setCart((prev) => {
-      const currentQuantity = prev[alt]?.quantity || 0;
-      if (currentQuantity <= 1) {
-        const { [alt]: removedItem, ...rest } = prev;
-        return rest;
-      } else {
-        return {
-          ...prev,
-          [alt]: {
-            ...prev[alt],
-            quantity: currentQuantity - 1,
-          },
-        };
-      }
-    });
+  const decrement = (id) => {
+    const updatedCart = cart.map((item) => 
+      item.id === id 
+        ? { ...item, quantity: item.quantity > 1 ? item.quantity - 1 : item.quantity } 
+        : item
+    ).filter(item => item.quantity > 0);
+
+    setCart(updatedCart);
+    localStorage.setItem("cart", JSON.stringify(updatedCart));
   };
 
   const limitedProducts = products.slice(0, 4);
@@ -88,7 +85,7 @@ const ProductDetails = () => {
         </div>
       </div>
       <div className="flex w-full items-start gap-[100px] mb-[60px]">
-        <div className="flex items-start w-[50%] justify-end gap-[50px] items-start">
+        <div className="flex w-[50%] justify-end gap-[50px] items-start">
           <div className="flex flex-col gap-[10px]">
             <img
               className="py-[5px] rounded-[7px] bg-[#f9f1e7] w-[76px] h-[80px]"

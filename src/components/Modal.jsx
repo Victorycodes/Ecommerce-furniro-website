@@ -3,27 +3,49 @@ import { products } from "../utils/products";
 import CloseCart from "../assets/images/icons/closeCart.svg";
 import RemoveIcon from "./RemoveIcon";
 import "../css/Modal.css";
+import { useNavigate } from "react-router-dom";
 
 const Modal = ({ removeItem, closeModal, cart }) => {
-  const product = products;
+  const navigate = useNavigate();
+  const cartItems = Array.isArray(cart) ? cart : [];
+
+  const calculateSubtotal = () => {
+    return cart
+      .reduce((total, product) => total + product.price * product.quantity, 0)
+      .toFixed(2);
+  };
+
+  const goToCartPage = () => {
+    closeModal();
+    navigate("/cart");
+  };
+
+  const goToComparePage = () => {
+    closeModal();
+    navigate("/product-comparison");
+  };
 
   return (
     <>
-      <div className="modalOverlay absolute bg-[white] flex flex-col w-[30%] left-[70%]">
-        <div className=" w-[80%] m-[auto]">
-          <div className="flex items-center justify-between mb-[20px]">
-            <h1 className="text-[24px] font-[600]">Shopping Cart</h1>
+      <div className="modalOverlay absolute bg-[white] flex flex-col xl2:w-[30%] w-[100%] xl2:left-[70%] left-[0px] xl2:top-[15px] top-[0px] z-[999] ">
+        <div className="xl2:w-[80%] w-[90%] xl2:m-[auto] mx-auto mt-[10px]">
+          <div className="flex items-center justify-between xl2:mb-[20px] mb-[10px]">
+            <h1 className="xl2:text-[24px] text-[18px] xl2:font-[600] font-[500]">
+              Shopping Cart
+            </h1>
             <div onClick={closeModal} className="cursor-pointer">
               <img src={CloseCart} alt="" />
             </div>
           </div>
           <hr />
-          <div className="cartItemDesc mt-[30px]">
+          <div className="cartItemDesc xl2:mt-[30px] mt-[5px]">
             <ul>
-              {cart.length === 0 ? (
-                <li>Your cart is empty.</li>
+              {cartItems.length === 0 ? (
+                <li className="xl2:text-[16px] text-[14px]">
+                  Your cart is empty.
+                </li>
               ) : (
-                cart.map((product) => (
+                cartItems.map((product) => (
                   <li
                     className="flex items-center pb-[20px] justify-between"
                     key={product.id}
@@ -37,9 +59,15 @@ const Modal = ({ removeItem, closeModal, cart }) => {
                     </div>
                     <div>
                       <h1 className="text-[16px]">{product.name}</h1>
-                      <p className="text-[12px] font-[500] text-[#B88E2F]">
-                        Rp{product.price * 1000}.00{" "}
-                      </p>
+                      <div className="flex items-center">
+                        <p className="text-[16px] mr-[5px] font-light">
+                          {product.quantity}
+                        </p>
+                        <p className="text-[12px] mr-[5px] font-light">X</p>
+                        <p className="text-[12px] font-[500] text-[#B88E2F]">
+                          Rp{product.price * 1000}.00{" "}
+                        </p>
+                      </div>
                     </div>
                     <div>
                       <RemoveIcon
@@ -53,19 +81,25 @@ const Modal = ({ removeItem, closeModal, cart }) => {
             </ul>
           </div>
           <div>
-            <div className="xl2:mb-[25px]">
-              <p>Subtotal</p>
+            <div className="xl2:mb-[25px] mb-[10px]">
+              <p className="xl2:text-[16px] text-[14px]">Subtotal</p>
               <p></p>
             </div>
             <hr />
-            <div className="flex xl2:mt-[25px] justify-between">
-              <button className="text-[12px] py-[10px] px-[30px] rounded-[18px] border-[#000000] border-[1px] cursor-pointer">
+            <div className="flex xl2:my-[25px] mt-[10px] justify-between">
+              <button
+                onClick={goToCartPage}
+                className="text-[12px] xl2:py-[15px] py-[5px] xl2:px-[30px] px-[15px] rounded-[18px] border-[#000000] border-[1px] cursor-pointer"
+              >
                 Cart
               </button>
-              <button className="text-[12px] py-[10px] px-[30px] rounded-[18px] border-[#000000] border-[1px] cursor-pointer">
+              <button className="text-[12px] xl2:py-[15px] py-[5px] xl2:px-[30px] px-[15px] rounded-[18px] border-[#000000] border-[1px] cursor-pointer">
                 Checkout
               </button>
-              <button className="text-[12px] py-[10px] px-[30px] rounded-[18px] border-[#000000] border-[1px] cursor-pointer">
+              <button
+                onClick={goToComparePage}
+                className="text-[12px] xl2:py-[15px] py-[5px] xl2:px-[30px] px-[15px] rounded-[18px] border-[#000000] border-[1px] cursor-pointer"
+              >
                 Comparison
               </button>
             </div>

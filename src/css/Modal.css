@@ -33,3 +33,14 @@
     scrollbar-width: 5px;
     scrollbar-color: #F9F1E7 black;
   }
+
+  @media screen and (max-width: 768px) {
+
+    .cartItemDesc {
+      padding: 5px 10px;
+    }
+    
+    .modalOverlay {
+      height: 100vh;
+    }
+  }

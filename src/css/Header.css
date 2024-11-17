@@ -33,6 +33,7 @@
 .headerIcon {
   display: flex;
   gap: 30px;
+  align-items: center;
 }
 
 .desktopNav {
@@ -43,9 +44,17 @@
 
 @media screen and (max-width: 768px) {
   .menuIcon {
-    width: 25px;
-    height: 25px;
     display: block;
+  }
+
+  .hamburgerBtn {
+    width: 20px;
+    height: 25px;
+  }
+
+  .closeBtn {
+    width: 15px;
+    height: 15px;
   }
 
   .menuContent {
@@ -63,11 +72,14 @@
     z-index: 999;
     top: 37px;
     display: flex;
+    position: fixed;
   }
 
   .menuContent ul {
     list-style: none;
     flex-direction: column;
+    align-items: flex-start;
+    padding-left: 30px;
   }
 
   .menuContent li {
