@@ -1,10 +1,11 @@
 import React from 'react'
 
-const AboutPage = () => {
+const sideNav = () => {
   return (
     <>
+    
     </>
   )
 }
 
-export default AboutPage
+export default sideNav

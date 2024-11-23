@@ -35,20 +35,24 @@ const CartPage = () => {
     <>
       <div>
         <img src={ShopBg} alt="" />
-        <div className="bgImg absolute xl2:left-[50%] left-[40%] xl2:top-[130px] top-[130px]">
-          <div className="flex justify-center">
-            <img src={LogoIcon} alt="" />
+        <div className="flex justify-center">
+          <div className="bgImg absolute xl2:top-[130px] top-[130px]">
+            <div className="flex justify-center">
+              <img src={LogoIcon} alt="" />
+            </div>
+            <h1 className="text-center xl2:text-5xl text-[24px]	font-medium xl2:mb-[8px]">
+              Cart
+            </h1>
+            <p className="flex items-center justify-center">
+              <span className="font-medium xl2:text-[16px] text-[12px]">
+                Home
+              </span>
+              <img className="h-[8px] w-[14px]" src={RightPointer} alt="" />
+              <span className="font-light xl2:text-[16px] text-[12px]">
+                Cart
+              </span>
+            </p>
           </div>
-          <h1 className="text-center xl2:text-5xl text-[24px]	font-medium xl2:mb-[8px]">
-            Cart
-          </h1>
-          <p className="flex items-center justify-center">
-            <span className="font-medium xl2:text-[16px] text-[12px]">
-              Home
-            </span>
-            <img className="h-[8px] w-[14px]" src={RightPointer} alt="" />
-            <span className="font-light xl2:text-[16px] text-[12px]">Cart</span>
-          </p>
         </div>
         <div className="w-[100%] gap-[40px] flex justify-center mt-[70px]">
           <div className="w-[60%]">

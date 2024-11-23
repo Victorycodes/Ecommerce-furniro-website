@@ -5,40 +5,45 @@ import LogoIcon from "../assets/images/icons/logoIcon.svg";
 import AsgaardSofa from "../assets/images/icons/sofa5.svg";
 import OutdoorSofa from "../assets/images/icons/sofa6.svg";
 import DownArrow from "../assets/images/icons/downVector.svg";
+import StarRating from "../assets/images/4_half_rating.png";
+import VerRule from "../assets/images/icons/verRule.svg";
+import SubFooter from "./sub_footer";
 
 const ProductComparison = () => {
   return (
     <>
       <div>
         <img src={ShopBg} alt="" />
-        <div className="bgImg absolute xl2:left-[35%] left-[40%] xl2:top-[130px] top-[130px]">
-          <div className="flex justify-center">
-            <img src={LogoIcon} alt="" />
+        <div className="flex justify-center">
+          <div className="bgImg absolute xl2:top-[130px] top-[130px]">
+            <div className="flex justify-center">
+              <img src={LogoIcon} alt="" />
+            </div>
+            <h1 className="text-center xl2:text-5xl text-[24px]	font-medium xl2:mb-[8px]">
+              Product Comparison
+            </h1>
+            <p className="flex items-center justify-center">
+              <span className="font-medium xl2:text-[16px] text-[12px]">
+                Home
+              </span>
+              <img className="h-[8px] w-[14px]" src={RightPointer} alt="" />
+              <span className="font-light xl2:text-[16px] text-[12px]">
+                Comparison
+              </span>
+            </p>
           </div>
-          <h1 className="text-center xl2:text-5xl text-[24px]	font-medium xl2:mb-[8px]">
-            Product Comparison
-          </h1>
-          <p className="flex items-center justify-center">
-            <span className="font-medium xl2:text-[16px] text-[12px]">
-              Home
-            </span>
-            <img className="h-[8px] w-[14px]" src={RightPointer} alt="" />
-            <span className="font-light xl2:text-[16px] text-[12px]">
-              Comparison
-            </span>
-          </p>
         </div>
-        <table className="mx-auto mt-6 w-[95%] table-fixed">
+        <table className="mx-auto mt-[30px] w-[95%] table-fixed border-collapse">
           <thead>
             <tr>
               <th className="text-left w-1/4">
                 <div className="flex flex-col items-start">
-                  <h6 className="text-[28px] font-medium">
-                    Go to Product <br /> page for more <br /> Products
+                  <h6 className="text-[28px] font-medium mb-[20px] w-[60%]">
+                    Go to Product page for more Products
                   </h6>
                   <p>
                     <a
-                      className="text-[#9F9F9F] border-b-2 border-[#9F9F9F]"
+                      className="text-[#9F9F9F] border-b-[1px] border-[#9F9F9F]"
                       href="#"
                     >
                       View More
@@ -54,6 +59,22 @@ const ProductComparison = () => {
                     className="max-w-[100%]"
                   />
                 </div>
+                <div>
+                  <p className="text-left font-medium text-[24px]">
+                    Asgaard Sofa
+                  </p>
+                  <p className="text-left font-medium text-[18px]">
+                    Rs. 250,000.00
+                  </p>
+                  <p className="flex items-center gap-[8px]">
+                    <span className="font-medium text-[18px]">4.7</span>
+                    <img src={StarRating} alt="" />
+                    <img src={VerRule} alt="" />
+                    <span className="text-[13px] text-[#9F9F9F]">
+                      204 Reviews
+                    </span>
+                  </p>
+                </div>
               </th>
               <th className="w-1/4 text-center">
                 <div className="mt-[-70px]">
@@ -62,10 +83,26 @@ const ProductComparison = () => {
                     alt="Outdoor Sofa"
                     className="max-w-[100%]"
                   />
+                  <div>
+                    <p className="text-left font-medium text-[24px]">
+                      Outdoor Sofa Set
+                    </p>
+                    <p className="text-left font-medium text-[18px]">
+                      Rs. 224,000.00
+                    </p>
+                    <p className="flex items-center gap-[8px]">
+                      <span className="font-medium text-[18px]">4.2</span>
+                      <img src={StarRating} alt="" />
+                      <img src={VerRule} alt="" />
+                      <span className="text-[13px] text-[#9F9F9F]">
+                        145 Reviews
+                      </span>
+                    </p>
+                  </div>
                 </div>
               </th>
               <th className="text-center">
-                <p className="text-[24px] font-semibold">Add A Product</p>
+                <p className="text-[24px] text-left font-semibold">Add A Product</p>
                 <button
                   className="flex items-center rounded-[8px] text-white gap-[20px] py-[5px] px-[15px] bg-[#B88E2F] text-[14px] font-semibold"
                   type="button"
@@ -75,42 +112,191 @@ const ProductComparison = () => {
               </th>
             </tr>
           </thead>
-          <tbody className="border-[1px] border-[#E8E8E8]">
+          <tbody className="mt-[30px]">
             <tr>
-                <td className="font-medium text-[28px]">General</td>
+              <td className="border-r-[1px] font-medium text-[28px] border-t-[1px]">
+                General
+              </td>
+              <td className="border-r-[1px] border-t-[1px]"></td>
+              <td className="border-r-[1px] border-t-[1px]"></td>
+              <td className=" border-t-[1px]"></td>
             </tr>
             <tr className="text-[20px]">
-              <td>Sales Package</td>
-              <td>1 sectional sofa</td>
-              <td>1 Three Seater, 2 Single Seater</td>
+              <td className="border-r-[1px]">Sales Package</td>
+              <td className="border-r-[1px]">1 sectional sofa</td>
+              <td className="border-r-[1px]">
+                1 Three Seater, 2 Single Seater
+              </td>
             </tr>
-            <tr  className="text-[20px] pl-[20px]">
-              <td>Model Number</td>
-              <td>TFCBLIGRBL6SRHS</td>
-              <td>DTUBLIGRBL568</td>
+            <tr className="text-[20px] pl-[20px]">
+              <td className="border-r-[1px]">Model Number</td>
+              <td className="border-r-[1px]">TFCBLIGRBL6SRHS</td>
+              <td className="border-r-[1px]">DTUBLIGRBL568</td>
             </tr>
-            <tr  className="text-[20px] pl-[20px]">
-              <td>Secondary Material</td>
-              <td>Solid Wood</td>
-              <td>Solid Wood</td>
+            <tr className="text-[20px] pl-[20px]">
+              <td className="border-r-[1px]">Secondary Material</td>
+              <td className="border-r-[1px]">Solid Wood</td>
+              <td className="border-r-[1px]">Solid Wood</td>
             </tr>
-            <tr  className="text-[20px] pl-[20px]">
-              <td>Configuration</td>
-              <td>L-shaped</td>
-              <td>L-shaped</td>
+            <tr className="text-[20px] pl-[20px]">
+              <td className="border-r-[1px]">Configuration</td>
+              <td className="border-r-[1px]">L-shaped</td>
+              <td className="border-r-[1px]">L-shaped</td>
             </tr>
-            <tr  className="text-[20px] pl-[20px]">
-              <td>Upholstery Material</td>
-              <td>Fabric + Cotton</td>
-              <td>Fabric + Cotton</td>
+            <tr className="text-[20px] pl-[20px]">
+              <td className="border-r-[1px]">Upholstery Material</td>
+              <td className="border-r-[1px]">Fabric + Cotton</td>
+              <td className="border-r-[1px]">Fabric + Cotton</td>
             </tr>
-            <tr  className="text-[20px] pl-[20px]">
-              <td>Upholstery Color</td>
-              <td>Bright Grey & Lion</td>
-              <td>Bright Grey & Lion</td>
+            <tr className="text-[20px] pl-[20px]">
+              <td className="border-r-[1px]">Upholstery Color</td>
+              <td className="border-r-[1px]">Bright Grey & Lion</td>
+              <td className="border-r-[1px]">Bright Grey & Lion</td>
+            </tr>
+
+            <tr>
+              <td className="border-r-[1px] font-medium text-[28px]">
+                Product
+              </td>
+              <td className="border-r-[1px] "></td>
+              <td className="border-r-[1px] "></td>
+              <td className=" border-r-[1px]"></td>
+            </tr>
+            <tr className="text-[20px]">
+              <td className="border-r-[1px]">Filling Material</td>
+              <td className="border-r-[1px]">Foam</td>
+              <td className="border-r-[1px]">Matte</td>
+            </tr>
+            <tr className="text-[20px] pl-[20px]">
+              <td className="border-r-[1px]">Finish Type</td>
+              <td className="border-r-[1px]">Bright Grey & Lion</td>
+              <td className="border-r-[1px]">Bright Grey & Lion</td>
+            </tr>
+            <tr className="text-[20px] pl-[20px]">
+              <td className="border-r-[1px]">Adjustable Headrest</td>
+              <td className="border-r-[1px]">No</td>
+              <td className="border-r-[1px]">Yes</td>
+            </tr>
+            <tr className="text-[20px] pl-[20px]">
+              <td className="border-r-[1px]">Maximum Load Capacity</td>
+              <td className="border-r-[1px]">280 KG</td>
+              <td className="border-r-[1px]">300 KG</td>
+            </tr>
+            <tr className="text-[20px] pl-[20px]">
+              <td className="border-r-[1px]">Origin of Manufacture</td>
+              <td className="border-r-[1px]">India</td>
+              <td className="border-r-[1px]">India</td>
+            </tr>
+            <tr>
+              <td className="border-r-[1px] font-medium text-[28px]">
+                Dimensions
+              </td>
+              <td className="border-r-[1px] "></td>
+              <td className="border-r-[1px] "></td>
+              <td className=" border-r-[1px]"></td>
+            </tr>
+            <tr className="text-[20px]">
+              <td className="border-r-[1px]">Width</td>
+              <td className="border-r-[1px]">265.32 cm</td>
+              <td className="border-r-[1px]">265.32 cm</td>
+            </tr>
+            <tr className="text-[20px] pl-[20px]">
+              <td className="border-r-[1px]">Height</td>
+              <td className="border-r-[1px]">76 cm</td>
+              <td className="border-r-[1px]">76 cm</td>
+            </tr>
+            <tr className="text-[20px] pl-[20px]">
+              <td className="border-r-[1px]">Depth</td>
+              <td className="border-r-[1px]">167.76 cm</td>
+              <td className="border-r-[1px]">167.76 cm</td>
+            </tr>
+            <tr className="text-[20px] pl-[20px]">
+              <td className="border-r-[1px]">Weight</td>
+              <td className="border-r-[1px]">45 KG</td>
+              <td className="border-r-[1px]">65 KG</td>
+            </tr>
+            <tr className="text-[20px] pl-[20px]">
+              <td className="border-r-[1px]">Seat Height</td>
+              <td className="border-r-[1px]">41.52 cm</td>
+              <td className="border-r-[1px]">41.52 cm</td>
+            </tr>
+            <tr className="text-[20px] pl-[20px]">
+              <td className="border-r-[1px]">Leg Height</td>
+              <td className="border-r-[1px]">5.46 cm</td>
+              <td className="border-r-[1px]">5.46 cm</td>
+            </tr>
+
+            <tr>
+              <td className="border-r-[1px] font-medium text-[28px]">
+                Warranty
+              </td>
+              <td className="border-r-[1px] "></td>
+              <td className="border-r-[1px] "></td>
+              <td className=" border-r-[1px]"></td>
+            </tr>
+            <tr className="text-[20px]">
+              <td className="border-r-[1px]">Warranty Summary</td>
+              <td className="border-r-[1px]">1 Year Manufacturing Warranty</td>
+              <td className="border-r-[1px]">
+                1.2 Year Manufacturing Warranty
+              </td>
+            </tr>
+            <tr className="text-[20px] pl-[20px]">
+              <td className="border-r-[1px]">Warranty Service Type</td>
+              <td className="border-r-[1px]">
+                For Warranty Claims or Any Product Related Issues Please Email
+                at operations@trevifurniture.com
+              </td>
+              <td className="border-r-[1px]">
+                For Warranty Claims or Any Product Related Issues Please Email
+                at support@xyz.com
+              </td>
+            </tr>
+            <tr className="text-[20px] pl-[20px]">
+              <td className="border-r-[1px]">Covered in Warranty</td>
+              <td className="border-r-[1px]">
+                Warranty Against Manufacturing Defect
+              </td>
+              <td className="border-r-[1px]">
+                Warranty of the product is limited to manufacturing defects
+                only.
+              </td>
+            </tr>
+            <tr className="text-[20px] pl-[20px]">
+              <td className="border-r-[1px]">Not Covered in Warranty</td>
+              <td className="border-r-[1px]">
+                The Warranty Does Not Cover Damages Due To Usage Of The Product
+                Beyond Its Intended Use And Wear & Tear In The Natural Course Of
+                Product Usage.
+              </td>
+              <td className="border-r-[1px]">
+                The Warranty Does Not Cover Damages Due To Usage Of The Product
+                Beyond Its Intended Use And Wear & Tear In The Natural Course Of
+                Product Usage.
+              </td>
+            </tr>
+            <tr className="text-[20px] pl-[20px]">
+              <td className="border-r-[1px]">Domestic Warranty</td>
+              <td className="border-r-[1px]">1 Year</td>
+              <td className="border-r-[1px]">3 Months</td>
+            </tr>
+            <tr className="text-[20px] text-white">
+              <td></td>
+              <td className="border-r-[1px]">
+                <button className="bg-[#B88E2F] py-[15px] px-[30px]">
+                  Add To Cart
+                </button>
+              </td>
+              <td className="border-r-[1px]">
+                <button className="bg-[#B88E2F] py-[15px] px-[30px]">
+                  Add To Cart
+                </button>
+              </td>
+              <td></td>
             </tr>
           </tbody>
         </table>
+        <SubFooter />
       </div>
     </>
   );

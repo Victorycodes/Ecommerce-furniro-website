@@ -7,6 +7,9 @@ import "./App.css";
 import { Routes, Route, useLocation } from "react-router-dom";
 import CartPage from "./components/CartPage.jsx";
 import ProductComparison from "./components/ProductComparison.jsx";
+import Checkout from "./components/Checkout.jsx";
+import ContactPage from "./components/ContactPage.jsx";
+import BlogPage from "./components/BlogPage.jsx";
 
 const App = () => {
   const location = useLocation();
@@ -20,6 +23,9 @@ const App = () => {
           <Route path="/product-details/:id" element={<ProductDetails />} />
           <Route path="/cart" element={<CartPage />} />
           <Route path="/product-comparison" element={<ProductComparison />} />
+          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/blog" element={<BlogPage />} />
         </Route>
       </Routes>
     </>

@@ -17,12 +17,14 @@ const imagesPerPage = 8;
 
 const ShopPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const navigate = useNavigate()
-  const [images, setImages] = useState([])
+  const navigate = useNavigate();
+  const [images, setImages] = useState([]);
 
-  const totalPages = 3
-  const pageNumbers = Array.from({ length: totalPages }, (_, index) => index + 1);
-
+  const totalPages = 3;
+  const pageNumbers = Array.from(
+    { length: totalPages },
+    (_, index) => index + 1
+  );
 
   const getCurrentImages = () => {
     const startIndex = (currentPage - 1) * imagesPerPage;
@@ -34,20 +36,28 @@ const ShopPage = () => {
   };
 
   useEffect(() => {
-    setImages(products)
-  })
+    setImages(products);
+  });
 
   return (
     <>
       <div>
         <img src={ShopBg} alt="" />
-        <div className="absolute xl2:left-[50%] left-[40%] xl2:top-[185px] top-[130px]">
-          <h1 className="text-center xl2:text-5xl text-[24px]	font-medium xl2:mb-[8px]">Shop</h1>
-          <p className="flex items-center justify-center">
-            <span className="font-medium xl2:text-[16px] text-[12px]">Home</span>
-            <img className="h-[8px] w-[14px]" src={RightPointer} alt="" />
-            <span className="font-light xl2:text-[16px] text-[12px]">Shop</span>
-          </p>
+        <div className="flex justify-center">
+          <div className="absolute xl2:top-[185px] top-[130px]">
+            <h1 className="text-center xl2:text-5xl text-[24px]	font-medium xl2:mb-[8px]">
+              Shop
+            </h1>
+            <p className="flex items-center justify-center">
+              <span className="font-medium xl2:text-[16px] text-[12px]">
+                Home
+              </span>
+              <img className="h-[8px] w-[14px]" src={RightPointer} alt="" />
+              <span className="font-light xl2:text-[16px] text-[12px]">
+                Shop
+              </span>
+            </p>
+          </div>
         </div>
         <div className=" bg-[#F9F1E7]">
           <div className="flex xl2:flex-row flex-col justify-around items-center mt-[-5px] py-[20px] max-w-[1236px] mx-auto">
@@ -69,13 +79,17 @@ const ShopPage = () => {
                   <img src={VerRule} alt="" />
                 </div>
                 <div>
-                  <p className="xl2:text-[16px] text-[14px]">Showing 1-16 of 32 results</p>
+                  <p className="xl2:text-[16px] text-[14px]">
+                    Showing 1-16 of 32 results
+                  </p>
                 </div>
               </div>
             </div>
             <div className="flex justify-around items-center">
               <form>
-                <label className="xl2:text-[20px] text-[14px] xl2:mr-[20px] mr-[5px]">Show</label>
+                <label className="xl2:text-[20px] text-[14px] xl2:mr-[20px] mr-[5px]">
+                  Show
+                </label>
                 <input
                   className="xl2:w-[55px] w-[20px] xl2:h-[55px] h-[20px] text-center xl2:mr-[30px] mr-[8px] xl2:text-[16px] text-[12px]"
                   type="number"
@@ -83,7 +97,9 @@ const ShopPage = () => {
                   id=""
                   placeholder="16"
                 />
-                <label className="xl2:text-[20px] text-[14px] xl2:mr-[20px] mr-[5px]">Short by</label>
+                <label className="xl2:text-[20px] text-[14px] xl2:mr-[20px] mr-[5px]">
+                  Short by
+                </label>
                 <input
                   className="xl2:w-[188px] w-[100px] xl2:h-[55px] h-[30px] text-center xl2:text-[16px] text-[12px]"
                   type="text"
@@ -98,15 +114,17 @@ const ShopPage = () => {
         <div className="max-w-[1236px] mx-auto">
           <div className="shopWrapperImg grid xl2:grid-cols-4 grid-cols-2">
             {getCurrentImages().map((image, index) => (
-              <div
-                key={index}
-                className="rangeWrapperDesc"
-              >
+              <div key={index} className="rangeWrapperDesc">
                 <div className="image-container">
-                  <img src={image.src} alt={image.alt}/>
+                  <img src={image.src} alt={image.alt} />
                   <div className="overlay">
                     <div>
-                      <button className="add-to-cart-btn" onClick={() => navigate(`/product-details/${image.id}`)}>Add to Cart</button>
+                      <button
+                        className="add-to-cart-btn"
+                        onClick={() => navigate(`/product-details/${image.id}`)}
+                      >
+                        Add to Cart
+                      </button>
                     </div>
                     <div className="interactIcon">
                       <div className="interactIconList">
@@ -146,7 +164,7 @@ const ShopPage = () => {
               </div>
             ))}
           </div>
-          <div className="flex justify-center gap-[30px]">
+          <div className="flex justify-center gap-[30px] mt-[50px]">
             {pageNumbers.map((page, index) => (
               <button
                 key={index}
@@ -168,7 +186,7 @@ const ShopPage = () => {
             </button>
           </div>
         </div>
-        <SubFooter />       
+        <SubFooter />
       </div>
     </>
   );

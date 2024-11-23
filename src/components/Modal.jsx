@@ -25,6 +25,11 @@ const Modal = ({ removeItem, closeModal, cart }) => {
     navigate("/product-comparison");
   };
 
+  const goToCheckoutPage = () => {
+    closeModal();
+    navigate("/checkout");
+  };
+
   return (
     <>
       <div className="modalOverlay absolute bg-[white] flex flex-col xl2:w-[30%] w-[100%] xl2:left-[70%] left-[0px] xl2:top-[15px] top-[0px] z-[999] ">
@@ -93,7 +98,10 @@ const Modal = ({ removeItem, closeModal, cart }) => {
               >
                 Cart
               </button>
-              <button className="text-[12px] xl2:py-[15px] py-[5px] xl2:px-[30px] px-[15px] rounded-[18px] border-[#000000] border-[1px] cursor-pointer">
+              <button
+                onClick={goToCheckoutPage}
+                className="text-[12px] xl2:py-[15px] py-[5px] xl2:px-[30px] px-[15px] rounded-[18px] border-[#000000] border-[1px] cursor-pointer"
+              >
                 Checkout
               </button>
               <button

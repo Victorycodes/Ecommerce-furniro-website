@@ -1,7 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import FooterLogo from "../assets/images/footerLogo.svg";
 
 const Footer = () => {
+  const navigate = useNavigate();
   return (
     <>
       <div>
@@ -24,16 +26,16 @@ const Footer = () => {
               <li className="xl2:text-[#9F9F9F] text-[#000000] font-medium xl2:text-[16px] text-[14px] xl2:font-normal xl2:pb-[30px] pb-[5px] xl2:pt-[0px] pt-[20px]">
                 Links
               </li>
-              <li className=" xl2:pb-[30px] pb-[5px] xl2:font-medium xl2:text-[16px] text-[14px] font-normal text-[#9F9F9F] xl2:text-[#000000]">
+              <li onClick={() => navigate("/")} className=" xl2:pb-[30px] pb-[5px] xl2:font-medium xl2:text-[16px] text-[14px] font-normal text-[#9F9F9F] xl2:text-[#000000]">
                 Home
               </li>
-              <li className=" xl2:pb-[30px] pb-[5px] xl2:font-medium xl2:text-[16px] text-[14px] font-normal text-[#9F9F9F] xl2:text-[#000000]">
+              <li onClick={() => navigate("/shop")} className=" xl2:pb-[30px] pb-[5px] xl2:font-medium xl2:text-[16px] text-[14px] font-normal text-[#9F9F9F] xl2:text-[#000000]">
                 Shop
               </li>
               <li className=" xl2:pb-[30px] pb-[5px] xl2:font-medium xl2:text-[16px] text-[14px] font-normal text-[#9F9F9F] xl2:text-[#000000]">
                 About
               </li>
-              <li className=" xl2:pb-[30px] pb-[15px] xl2:font-medium xl2:text-[16px] text-[14px] font-normal text-[#9F9F9F] xl2:text-[#000000]">
+              <li onClick={() => navigate("/contact")} className=" xl2:pb-[30px] pb-[15px] xl2:font-medium xl2:text-[16px] text-[14px] font-normal text-[#9F9F9F] xl2:text-[#000000]">
                 Contact
               </li>
             </ul>
@@ -49,6 +51,9 @@ const Footer = () => {
               </li>
               <li className=" xl2:pb-[30px] pb-[5px] xl2:font-medium xl2:text-[16px] text-[14px] font-normal text-[#9F9F9F] xl2:text-[#000000]">
                 Privacy Policies
+              </li>
+              <li onClick={() => navigate("/blog")} className=" xl2:pb-[30px] pb-[5px] xl2:font-medium xl2:text-[16px] text-[14px] font-normal text-[#9F9F9F] xl2:text-[#000000]">
+                Blog
               </li>
             </ul>
             <form className="xl2:mb-[0px] mb-[15px]">

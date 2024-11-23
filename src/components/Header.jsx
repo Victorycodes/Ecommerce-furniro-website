@@ -74,7 +74,7 @@ const Header = () => {
             <button onClick={() => navigate("/shop")}>
               <li>Shop</li>
             </button>
-            <button onClick={() => navigate("/about")}>
+            <button>
               <li>About</li>
             </button>
             <button onClick={() => navigate("/contact")}>
