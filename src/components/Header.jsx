@@ -4,7 +4,7 @@ import Profile from "../assets/images/account-alert-outline.png";
 import Search from "../assets/images/icons_search.png";
 import Heart from "../assets/images/icons_heart.png";
 import Cart from "../assets/images/shopping-cart.png";
-import HamburgerBtn from "../assets/images/icons/Hamburger.png";
+import HamburgerBtn from "../assets/images/icons/hamburger.png";
 import CloseBtn from "../assets/images/icons/close.png";
 import "../css/Header.css";
 import { useNavigate } from "react-router-dom";
