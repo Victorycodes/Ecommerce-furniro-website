@@ -44,26 +44,26 @@ const ShopPage = () => {
       <div>
         <img src={ShopBg} alt="" />
         <div className="flex justify-center">
-          <div className="absolute xl2:top-[185px] top-[130px]">
-            <h1 className="text-center xl2:text-5xl text-[24px]	font-medium xl2:mb-[8px]">
+          <div className="absolute desktop:top-[185px] tablet:top-[80px] top-[55px]">
+            <h1 className="text-center desktop:text-5xl text-[24px]	font-medium desktop:mb-[8px]">
               Shop
             </h1>
             <p className="flex items-center justify-center">
-              <span className="font-medium xl2:text-[16px] text-[12px]">
+              <span className="font-medium desktop:text-[16px] text-[12px]">
                 Home
               </span>
               <img className="h-[8px] w-[14px]" src={RightPointer} alt="" />
-              <span className="font-light xl2:text-[16px] text-[12px]">
+              <span className="font-light desktop:text-[16px] text-[12px]">
                 Shop
               </span>
             </p>
           </div>
         </div>
         <div className=" bg-[#F9F1E7]">
-          <div className="flex xl2:flex-row flex-col justify-around items-center mt-[-5px] py-[20px] max-w-[1236px] mx-auto">
-            <div className="flex items-center xl2:mt-[initial] mt-[50px]">
-              <div className="flex justify-around items-center xl2:gap-[30px] gap-[5px]">
-                <div className="flex items-center xl2:gap-[15px] gap-[5px]">
+          <div className="flex desktop:flex-row flex-col justify-around items-center desktop:mt-[-5px] desktop:py-[20px] pb-[20px] max-w-[1236px] mx-auto">
+            <div className="flex items-center desktop:mt-[initial] mt-[25px]">
+              <div className="flex justify-around items-center desktop:gap-[30px] gap-[5px]">
+                <div className="flex items-center desktop:gap-[15px] gap-[5px]">
                   <img src={FilterIcon} alt="" />
                   <p className="text-[20px]">Filter</p>
                 </div>
@@ -75,11 +75,11 @@ const ShopPage = () => {
                 </div>
               </div>
               <div className="flex justify-around items-center">
-                <div className="xl2:mx-[30px] mx-[10px]">
+                <div className="desktop:mx-[30px] mx-[10px]">
                   <img src={VerRule} alt="" />
                 </div>
                 <div>
-                  <p className="xl2:text-[16px] text-[14px]">
+                  <p className="desktop:text-[16px] text-[14px]">
                     Showing 1-16 of 32 results
                   </p>
                 </div>
@@ -87,21 +87,21 @@ const ShopPage = () => {
             </div>
             <div className="flex justify-around items-center">
               <form>
-                <label className="xl2:text-[20px] text-[14px] xl2:mr-[20px] mr-[5px]">
+                <label className="desktop:text-[20px] text-[14px] desktop:mr-[20px] mr-[5px]">
                   Show
                 </label>
                 <input
-                  className="xl2:w-[55px] w-[20px] xl2:h-[55px] h-[20px] text-center xl2:mr-[30px] mr-[8px] xl2:text-[16px] text-[12px]"
+                  className="desktop:w-[55px] w-[20px] desktop:h-[55px] h-[20px] text-center desktop:mr-[30px] mr-[8px] desktop:text-[16px] text-[12px]"
                   type="number"
                   name=""
                   id=""
                   placeholder="16"
                 />
-                <label className="xl2:text-[20px] text-[14px] xl2:mr-[20px] mr-[5px]">
+                <label className="desktop:text-[20px] text-[14px] desktop:mr-[20px] mr-[5px]">
                   Short by
                 </label>
                 <input
-                  className="xl2:w-[188px] w-[100px] xl2:h-[55px] h-[30px] text-center xl2:text-[16px] text-[12px]"
+                  className="desktop:w-[188px] w-[100px] desktop:h-[55px] h-[30px] text-center desktop:text-[16px] text-[12px]"
                   type="text"
                   name=""
                   id=""
@@ -112,7 +112,7 @@ const ShopPage = () => {
           </div>
         </div>
         <div className="max-w-[1236px] mx-auto">
-          <div className="shopWrapperImg grid xl2:grid-cols-4 grid-cols-2">
+          <div className="shopWrapperImg shopRows shopFirstRow grid desktop:grid-cols-4 grid-cols-2 desktop:mt-[30px] mt-[10px]">
             {getCurrentImages().map((image, index) => (
               <div key={index} className="rangeWrapperDesc">
                 <div className="image-container">
@@ -164,7 +164,7 @@ const ShopPage = () => {
               </div>
             ))}
           </div>
-          <div className="flex justify-center gap-[30px] mt-[50px]">
+          <div className="flex justify-center desktop:gap-[30px] tablet:gap-[30px] gap-[20px] desktop:mt-[50px] mt-[20px]">
             {pageNumbers.map((page, index) => (
               <button
                 key={index}

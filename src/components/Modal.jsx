@@ -32,10 +32,10 @@ const Modal = ({ removeItem, closeModal, cart }) => {
 
   return (
     <>
-      <div className="modalOverlay absolute bg-[white] flex flex-col xl2:w-[30%] w-[100%] xl2:left-[70%] left-[0px] xl2:top-[15px] top-[0px] z-[999] ">
-        <div className="xl2:w-[80%] w-[90%] xl2:m-[auto] mx-auto mt-[10px]">
-          <div className="flex items-center justify-between xl2:mb-[20px] mb-[10px]">
-            <h1 className="xl2:text-[24px] text-[18px] xl2:font-[600] font-[500]">
+      <div className="modalOverlay absolute bg-[white] flex flex-col desktop:w-[30%] w-[100%] desktop:left-[70%] right-[0px] desktop:top-[10px] top-[0px] z-[999] ">
+        <div className="desktop:w-[80%] w-[90%] desktop:m-[auto] mx-auto mt-[10px]">
+          <div className="flex items-center justify-between desktop:mb-[20px] mb-[10px]">
+            <h1 className="desktop:text-[24px] text-[18px] desktop:font-[600] font-[500]">
               Shopping Cart
             </h1>
             <div onClick={closeModal} className="cursor-pointer">
@@ -43,35 +43,37 @@ const Modal = ({ removeItem, closeModal, cart }) => {
             </div>
           </div>
           <hr />
-          <div className="cartItemDesc xl2:mt-[30px] mt-[5px]">
+          <div className="cartItemDesc desktop:mt-[30px] mt-[5px]">
             <ul>
               {cartItems.length === 0 ? (
-                <li className="xl2:text-[16px] text-[14px]">
+                <li className="desktop:text-[16px] text-[14px]">
                   Your cart is empty.
                 </li>
               ) : (
                 cartItems.map((product) => (
                   <li
-                    className="flex items-center pb-[20px] justify-between"
+                    className="flex items-center pb-[20px] justify-between desktop:gap-0 gap-[30px]"
                     key={product.id}
                   >
-                    <div>
-                      <img
-                        src={product.src}
-                        className="w-[111px] h-[90px] rounded-[5px]"
-                        alt=""
-                      />
-                    </div>
-                    <div>
-                      <h1 className="text-[16px]">{product.name}</h1>
-                      <div className="flex items-center">
-                        <p className="text-[16px] mr-[5px] font-light">
-                          {product.quantity}
-                        </p>
-                        <p className="text-[12px] mr-[5px] font-light">X</p>
-                        <p className="text-[12px] font-[500] text-[#B88E2F]">
-                          Rp{product.price * 1000}.00{" "}
-                        </p>
+                    <div className="flex items-center gap-[30px]">
+                      <div>
+                        <img
+                          src={product.src}
+                          className="desktop:w-[111px] w-[75px] desktop:h-[90px] h-[70px] rounded-[5px]"
+                          alt=""
+                        />
+                      </div>
+                      <div>
+                        <h1 className="text-[16px]">{product.name}</h1>
+                        <div className="flex items-center">
+                          <p className="text-[16px] mr-[5px] font-light">
+                            {product.quantity}
+                          </p>
+                          <p className="text-[12px] mr-[5px] font-light">X</p>
+                          <p className="text-[12px] font-[500] text-[#B88E2F]">
+                            Rp{product.price * 1000}.00{" "}
+                          </p>
+                        </div>
                       </div>
                     </div>
                     <div>
@@ -86,27 +88,27 @@ const Modal = ({ removeItem, closeModal, cart }) => {
             </ul>
           </div>
           <div>
-            <div className="xl2:mb-[25px] mb-[10px]">
-              <p className="xl2:text-[16px] text-[14px]">Subtotal</p>
+            <div className="desktop:mb-[25px] mb-[10px]">
+              <p className="desktop:text-[16px] text-[14px]">Subtotal</p>
               <p></p>
             </div>
             <hr />
-            <div className="flex xl2:my-[25px] mt-[10px] justify-between">
+            <div className="flex desktop:my-[25px] mt-[10px] justify-between">
               <button
                 onClick={goToCartPage}
-                className="text-[12px] xl2:py-[15px] py-[5px] xl2:px-[30px] px-[15px] rounded-[18px] border-[#000000] border-[1px] cursor-pointer"
+                className="text-[12px] desktop:py-[15px] py-[5px] desktop:px-[30px] px-[15px] rounded-[18px] border-[#000000] border-[1px] cursor-pointer"
               >
                 Cart
               </button>
               <button
                 onClick={goToCheckoutPage}
-                className="text-[12px] xl2:py-[15px] py-[5px] xl2:px-[30px] px-[15px] rounded-[18px] border-[#000000] border-[1px] cursor-pointer"
+                className="text-[12px] desktop:py-[15px] py-[5px] desktop:px-[30px] px-[15px] rounded-[18px] border-[#000000] border-[1px] cursor-pointer"
               >
                 Checkout
               </button>
               <button
                 onClick={goToComparePage}
-                className="text-[12px] xl2:py-[15px] py-[5px] xl2:px-[30px] px-[15px] rounded-[18px] border-[#000000] border-[1px] cursor-pointer"
+                className="text-[12px] desktop:py-[15px] py-[5px] desktop:px-[30px] px-[15px] rounded-[18px] border-[#000000] border-[1px] cursor-pointer"
               >
                 Comparison
               </button>

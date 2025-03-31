@@ -15,6 +15,7 @@ const Header = () => {
   const [cart, setCart] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [isNavOpen, setIsNavOpen] = useState(false);
+  const [activeTab, setActiveTab] = useState("home");
 
   const toggleNav = () => {
     setIsNavOpen(!isNavOpen);
@@ -48,7 +49,7 @@ const Header = () => {
   };
 
   return (
-    <header className="headerWrapper relative">
+    <header className="headerWrapper sticky top-0 z-20 border-b border-default-200 bg-white transition-all nav-sticky p-[5px]">
       <div onClick={toggleNav} className="menuIcon cursor-pointer">
         {isNavOpen ? (
           <img
@@ -61,24 +62,45 @@ const Header = () => {
         )}
       </div>
 
-      <div>
+      <div className="logoImg">
         <img src={Logo} alt="Logo" className="homeLogo" />
       </div>
 
       <div className="headerNav">
         <nav className={`menuContent ${isNavOpen ? "open" : ""}`}>
-          <ul className="homeList my-[20px]">
-            <button onClick={() => navigate("/")}>
-              <li>Home</li>
+          <ul className="homeList">
+            <button
+              onClick={() => {
+                setActiveTab("home");
+                navigate("/");
+              }}
+            >
+              <li className={activeTab === "home" ? "active" : ""}>Home</li>
             </button>
-            <button onClick={() => navigate("/shop")}>
-              <li>Shop</li>
+            <button
+              onClick={() => {
+                setActiveTab("shop");
+                navigate("/shop");
+              }}
+            >
+              <li className={activeTab === "shop" ? "active" : ""}>Shop</li>
             </button>
-            <button>
-              <li>About</li>
+            <button
+              onClick={() => {
+                setActiveTab("about");
+              }}
+            >
+              <li className={activeTab === "about" ? "active" : ""}>About</li>
             </button>
-            <button onClick={() => navigate("/contact")}>
-              <li>Contact Us</li>
+            <button
+              onClick={() => {
+                setActiveTab("contact");
+                navigate("/contact");
+              }}
+            >
+              <li className={activeTab === "contact" ? "active" : ""}>
+                Contact Us
+              </li>
             </button>
           </ul>
         </nav>
@@ -107,7 +129,7 @@ const Header = () => {
               onClick={openModal}
               className="homeIcon cursor-pointer"
             />
-            <div className="text-[red] text-[25px]">{cart.length}</div>
+            <div className="text-[red] desktop:text-[25px] text-[18px]">{cart.length}</div>
           </div>
         </div>
         {showModal && (

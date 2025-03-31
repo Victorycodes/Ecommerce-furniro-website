@@ -4,6 +4,20 @@
   list-style-type: none;
 }
 
+.homeList li.active {
+  color: black;
+  font-weight: 600;
+}
+
+.homeList li {
+  transition: color 0.3s ease, font-weight 0.3s ease;
+}
+
+.homeList li:hover {
+  color: black;
+  font-weight: 600;
+}
+
 .headerWrapper {
   display: flex;
   align-items: center;
@@ -48,9 +62,9 @@
   }
 
   .hamburgerBtn {
-    width: 20px;
-    height: 25px;
-  }
+    width: 30px;
+    height: 35px;
+}
 
   .closeBtn {
     width: 15px;
@@ -88,9 +102,9 @@
   }
 
   .homeLogo {
-    width: 80px;
-    height: 20px;
-  }
+    width: 105px;
+    height: 30px;
+}
 
   .homeIcon {
     width: 20px;
@@ -100,4 +114,42 @@
   .headerIcon {
     align-items: center;
   }
+
+  .headerWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 100px;
+  }
+
+  .logoImg {
+    margin-left: -115px;
+  }
+}
+
+  @media screen and (max-width: 500px) {
+    .logoImg {
+      margin-left: -30px;
+    }
+
+    .headerWrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      gap: 10px;
+    }
+
+    .headerIcon {
+      gap: 10px;
+    }
+
+    .hamburgerBtn {
+      width: 25px;
+      height: 30px;
+  }
+
+  .homeIcon {
+    width: 17px;
+    height: 17px;
+}
 }

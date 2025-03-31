@@ -13,15 +13,21 @@ import rightArrow from "../assets/images/rightarrow.png";
 import Furniro from "../assets/images/furniro.svg";
 import "../css/HomePage.css";
 import { seeMore } from "../utils/seeMore";
+import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
   const [images, setImages] = useState([]);
   const [visibleImages, setVisibleImages] = useState(8);
   const [showAll, setShowAll] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     setImages(seeMore);
   }, []);
+
+  const goToComparePage = () => {
+    navigate("/product-comparison");
+  };
 
   const toggleImages = () => {
     setVisibleImages(showAll ? 8 : images.length);
@@ -52,29 +58,29 @@ const HomePage = () => {
         </div>
       </div>
       <div className="rangeWrapper">
-        <h1 className="xl2:text-3xl text-[20px] font-bold text-[#333333] subTopic xl2:mt-[40px] mt-[10px]">
+        <h1 className="desktop:text-3xl text-[20px] font-bold text-[#333333] subTopic desktop:mt-[40px] mt-[10px]">
           Browse The Range
         </h1>
-        <p className="subTopic colorGrey2 xl2:w-[100%] w-[75%]">
+        <p className="subTopic colorGrey2 desktop:w-[100%] w-[75%]">
           Lorem ipsum dolor sit amet, consectetur adipiscing
         </p>
         <div className="rangeWrapperImgs">
           <div>
-            <img src={Dining} alt="Diningroom" className="rooms" />
+            <img src={Dining} alt="Diningroom" />
             <p className="rangeWrapperDesc colorGrey">Dining</p>
           </div>
           <div>
-            <img src={LivingRoom} alt="Livingroom" className="rooms" />
+            <img src={LivingRoom} alt="Livingroom" />
             <p className="rangeWrapperDesc colorGrey">Living</p>
           </div>
           <div>
-            <img src={Bedroom} alt="Bedroom" className="rooms" />
+            <img src={Bedroom} alt="Bedroom" />
             <p className="rangeWrapperDesc colorGrey">Bedroom</p>
           </div>
         </div>
       </div>
       <div className="ourProductWrapper">
-        <h1 className="xl2:text-3xl text-[20px] font-bold text-[#3A3A3A] subTopic xl2:mt-[40px] mt-[10px] subTopic">
+        <h1 className="desktop:text-3xl text-[20px] font-bold text-[#3A3A3A] subTopic desktop:mt-[40px] mt-[10px] subTopic">
           Our Products
         </h1>
         <div className="rangeWrapperImg">
@@ -87,7 +93,12 @@ const HomePage = () => {
                       <img src={image.src} alt={image.alt} />
                       <div className="overlay">
                         <div>
-                          <button className="add-to-cart-btn">
+                          <button
+                            className="add-to-cart-btn"
+                            onClick={() =>
+                              navigate(`/product-details/${image.id}`)
+                            }
+                          >
                             Add to Cart
                           </button>
                         </div>
@@ -100,7 +111,10 @@ const HomePage = () => {
                             />
                             <p className="interactionIconDesc">Share</p>
                           </div>
-                          <div className="interactIconList">
+                          <div
+                            onClick={goToComparePage}
+                            className="interactIconList"
+                          >
                             <img
                               src={compareIcon}
                               className="socialIcon"
@@ -109,7 +123,11 @@ const HomePage = () => {
                             <p className="interactionIconDesc">Compare</p>
                           </div>
                           <div className="loveIcon">
-                            <img src={likeIcon} className="loveIconImg" alt="like icon" />
+                            <img
+                              src={likeIcon}
+                              className="loveIconImg"
+                              alt="like icon"
+                            />
                           </div>
                         </div>
                       </div>
@@ -141,7 +159,7 @@ const HomePage = () => {
       <div className="roomInspiration">
         <div className="roomInspirationWrapper">
           <div className="roomInspirationInfo">
-            <h1 className="xl2:text-4xl text-[24px] xl2:font-bold font-semibold colorGrey3 roomInspirationHead">
+            <h1 className="desktop:text-4xl tablet:text-[24px] text-[12px] desktop:font-bold font-semibold colorGrey3 roomInspirationHead desktop:mb-0 tablet:mb-0 mb-[5px]">
               50+ Beautiful rooms inspiration
             </h1>
             <p className="colorGrey4 roomInspirationDesc">
@@ -155,7 +173,7 @@ const HomePage = () => {
           <div className="relative">
             <img src={room1} alt="room one" />
             <div className="room1Desc">
-              <p className="colorGrey4 flex items-center xl2:gap-2 gap-1 xl2:text-[16px] text-[12px]">
+              <p className="colorGrey4 flex items-center desktop:gap-2 gap-1 desktop:text-[16px] text-[12px]">
                 01 <img src={Stroke} alt="" /> Bed Room
               </p>
               <p className="room1Info">Inner peace</p>
@@ -170,8 +188,10 @@ const HomePage = () => {
         </div>
       </div>
       <div className="textCenter">
-        <p className="colorGrey4 xl2:mt-[40px] mt-[20px] xl2:text-[16px] text-[14px]">Share your setup with </p>
-        <h1 className="colorGrey3 xl2:text-3xl text-[20px] xl2:font-bold font-semibold text-[#3A3A3A]">
+        <p className="colorGrey4 desktop:mt-[40px] mt-[20px] desktop:text-[16px] text-[14px]">
+          Share your setup with{" "}
+        </p>
+        <h1 className="colorGrey3 desktop:text-3xl text-[20px] desktop:font-bold font-semibold text-[#3A3A3A]">
           #FuniroFurniture
         </h1>
         <div className="mb-[50px]">

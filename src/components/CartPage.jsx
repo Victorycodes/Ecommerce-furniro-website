@@ -36,33 +36,35 @@ const CartPage = () => {
       <div>
         <img src={ShopBg} alt="" />
         <div className="flex justify-center">
-          <div className="bgImg absolute xl2:top-[130px] top-[130px]">
+          <div className="bgImg absolute desktop:top-[130px] top-[28px]">
             <div className="flex justify-center">
               <img src={LogoIcon} alt="" />
             </div>
-            <h1 className="text-center xl2:text-5xl text-[24px]	font-medium xl2:mb-[8px]">
+            <div className="logoIconHead">
+            <h1 className="text-center desktop:text-5xl text-[24px]	font-medium desktop:mb-[8px]">
               Cart
             </h1>
-            <p className="flex items-center justify-center">
-              <span className="font-medium xl2:text-[16px] text-[12px]">
+            </div>
+            <p className="flex items-center justify-center desktop:mt-[0px] mt-[-8px]">
+              <span className="font-medium desktop:text-[16px] text-[12px]">
                 Home
               </span>
               <img className="h-[8px] w-[14px]" src={RightPointer} alt="" />
-              <span className="font-light xl2:text-[16px] text-[12px]">
+              <span className="font-light desktop:text-[16px] text-[12px]">
                 Cart
               </span>
             </p>
           </div>
         </div>
-        <div className="w-[100%] gap-[40px] flex justify-center mt-[70px]">
-          <div className="w-[60%]">
+        <div className="w-[100%] gap-[40px] flex desktop:flex-row flex-col justify-center desktop:mt-[70px] mt-[30px]">
+          <div className="desktop:w-[60%] w-[95%] desktop:mx-0 mx-[auto]">
             {cart.length === 0 ? (
               <div className="text-center text-lg font-medium py-4">
                 Your cart is empty.
               </div>
             ) : (
               <>
-                <ul className="flex justify-around py-4 border-b bg-[#F9F1E7] p-4 rounded-lg shadow-md">
+                <ul className="desktop:text-[16px] text-[12px] flex justify-around desktop:py-4 py-2 border-b bg-[#F9F1E7] p-4 rounded-lg shadow-md">
                   <li className="font-semibold">Product</li>
                   <li className="font-semibold">Price</li>
                   <li className="font-semibold">Quantity</li>
@@ -72,12 +74,12 @@ const CartPage = () => {
                 {cart.map((item, index) => (
                   <ul
                     key={index}
-                    className="bg-[#ffffff] flex justify-between items-center py-4 border-b"
+                    className="bg-[#ffffff] flex justify-between items-center py-4 desktop:text-[16px] text-[14px] border-b"
                   >
                     <div className="flex gap-[20px] items-center">
                       <li>
                         <img
-                          className="w-[108px] h-[105px]"
+                          className="desktop:w-[108px] w-[85px] desktop:h-[105px] h-[85px]"
                           src={item.src}
                           alt=""
                         />
@@ -101,23 +103,23 @@ const CartPage = () => {
               </>
             )}
           </div>
-          <div className="w-[30%] py-[15px] bg-[#F9F1E7]">
-            <p className="text-center text-[32px] font-semibold pb-[50px]">
+          <div className="desktop:w-[30%] w-[95%]  desktop:mx-0 mx-[auto] py-[15px] bg-[#F9F1E7] desktop:px-0 px-[20px]">
+            <p className="desktop:text-center text-left desktop:text-[32px] text-[24px] font-semibold desktop:pb-[50px] pb-[20px]">
               Cart Totals
             </p>
-            <div className="justify-center flex gap-[50px] mb-2 pb-[30px]">
+            <div className="desktop:justify-center justify-between flex gap-[50px] mb-2 desktop:pb-[30px] pb-[15px]">
               <span className="font-medium">Subtotal:</span>
               <span>${subtotal.toFixed(2)}</span>
             </div>
-            <div className="justify-center flex gap-[50px] mb-4 pb-[30px]">
+            <div className="desktop:justify-center justify-between flex gap-[50px] mb-4 pb-[30px]">
               <span className="font-medium">Total:</span>
               <span className="font-medium text-[20px] text-[#B88E2F]">
                 ${total.toFixed(2)}
               </span>
             </div>
             <div className="flex justify-center">
-              <button className="py-[18px] px-[35px] rounded-[12px] border-[#000000] border-[1px] cursor-pointer">
-                <p className="text-[20px]">Checkout</p>
+              <button className="desktop:py-[18px] py-3 desktop:px-[35px] px-10 rounded-[12px] border-[#000000] border-[1px] cursor-pointer desktop:w-[50%] w-full">
+                <p className="desktop:text-[20px] text-[14px]">Checkout</p>
               </button>
             </div>
           </div>

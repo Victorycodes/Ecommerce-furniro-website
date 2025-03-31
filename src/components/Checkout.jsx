@@ -29,72 +29,72 @@ const Checkout = () => {
       <div>
         <img src={ShopBg} alt="" />
         <div className="flex justify-center">
-          <div className="bgImg absolute xl2:top-[130px] top-[130px]">
+          <div className="bgImg absolute desktop:top-[130px] top-[28px]">
             <div className="flex justify-center">
               <img src={LogoIcon} alt="" />
             </div>
-            <div>
-              <h1 className="text-center xl2:text-5xl text-[24px]	font-medium xl2:mb-[8px]">
+            <div className="logoIconHead">
+              <h1 className="text-center desktop:text-5xl text-[24px]	font-medium desktop:mb-[8px]">
                 Checkout
               </h1>
             </div>
             <div>
-              <p className="flex items-center justify-center">
-                <span className="font-medium xl2:text-[16px] text-[12px]">
+              <p className="flex items-center justify-center desktop:mt-[0px] mt-[-8px]">
+                <span className="font-medium desktop:text-[16px] text-[12px]">
                   Home
                 </span>
                 <img className="h-[8px] w-[14px]" src={RightPointer} alt="" />
-                <span className="font-light xl2:text-[16px] text-[12px]">
+                <span className="font-light desktop:text-[16px] text-[12px]">
                   Checkout
                 </span>
               </p>
             </div>
           </div>
         </div>
-        <div className="mt-[50px]">
-          <p className="font-semibold text-[36px] mb-[30px] ml-[70px]">
+        <div className="desktop:mt-[50px] mt-[20px]">
+          <p className="font-semibold desktop:text-[36px] text-[24px] desktop:mb-[30px] mb-[20px] desktop:ml-[70px] ml-[30px]">
             Billing Details
           </p>
-          <div className="flex w-[100%] justify-around">
-            <div className="w-[40%]">
-              <form className="flex flex-col w-[100%] ">
-                <div className="flex gap-[30px]">
+          <div className="flex w-[100%] desktop:flex-row flex-col justify-around">
+            <div className="desktop:w-[40%] w-[95%] desktop:mx-0 mx-auto">
+              <form className="flex flex-col desktop:w-[100%] w-[90%] desktop:mx-0 laptop:mx-0 mx-auto">
+                <div className="flex justify-between desktop:flex-row flex-col">
                   <div className="mb-[20px]">
-                    <label className="font-medium text-[16px]">
+                    <label className="font-medium desktop:text-[16px] text-[14px]">
                       First Name
                     </label>
                     <br />
                     <input
-                      className="outline-none h-[75px] w-full rounded-[5px] border-[1px] border-solid border-[#9F9F9F] px-[20px]"
+                      className="outline-none  desktop:py-[25px] py-[15px] w-full rounded-[5px] border-[1px] border-solid border-[#9F9F9F] px-[20px]"
                       type="text"
                     />
                   </div>
                   <div className="mb-[20px]">
-                    <label className="font-medium text-[16px]">Last Name</label>
+                    <label className="font-medium desktop:text-[16px] text-[14px]">Last Name</label>
                     <br />
                     <input
-                      className="outline-none h-[75px] w-full rounded-[5px] border-[1px] border-solid border-[#9F9F9F] px-[20px]"
+                      className="outline-none  desktop:py-[25px] py-[15px] w-full rounded-[5px] border-[1px] border-solid border-[#9F9F9F] px-[20px]"
                       type="text"
                     />
                   </div>
                 </div>
                 <div className="mb-[20px]">
-                  <label className="font-medium text-[16px]">
+                  <label className="font-medium desktop:text-[16px] text-[14px]">
                     Company Name (Optional)
                   </label>
                   <br />
                   <input
-                    className="outline-none h-[75px] w-full rounded-[5px] border-[1px] border-solid border-[#9F9F9F] px-[20px]"
+                    className="outline-none  desktop:py-[25px] py-[15px] w-full rounded-[5px] border-[1px] border-solid border-[#9F9F9F] px-[20px]"
                     type="text"
                   />
                 </div>
                 <div className="mb-[20px]">
-                  <label className="font-medium text-[16px]">
+                  <label className="font-medium desktop:text-[16px] text-[14px]">
                     Country / Region
                   </label>
                   <br />
                   <select
-                    className="h-[75px] w-full rounded-[5px] border-[1px] border-solid border-[#9F9F9F] text-[#9F9F9F] px-[20px]"
+                    className=" desktop:py-[25px] py-[15px] w-full rounded-[5px] border-[1px] border-solid border-[#9F9F9F] text-[#9F9F9F] px-[20px]"
                     name="country"
                     id="country"
                   >
@@ -110,28 +110,28 @@ const Checkout = () => {
                   </select>
                 </div>
                 <div className="mb-[20px]">
-                  <label className="font-medium text-[16px]">
+                  <label className="font-medium desktop:text-[16px] text-[14px]">
                     Street address
                   </label>
                   <br />
                   <input
-                    className="outline-none h-[75px] w-full rounded-[5px] border-[1px] border-solid border-[#9F9F9F] px-[20px]"
+                    className="outline-none  desktop:py-[25px] py-[15px] w-full rounded-[5px] border-[1px] border-solid border-[#9F9F9F] px-[20px]"
                     type="text"
                   />
                 </div>
                 <div className="mb-[20px]">
-                  <label className="font-medium text-[16px]">Town / City</label>
+                  <label className="font-medium desktop:text-[16px] text-[14px]">Town / City</label>
                   <br />
                   <input
-                    className="outline-none h-[75px] w-full rounded-[5px] border-[1px] border-solid border-[#9F9F9F] px-[20px]"
+                    className="outline-none  desktop:py-[25px] py-[15px] w-full rounded-[5px] border-[1px] border-solid border-[#9F9F9F] px-[20px]"
                     type="text"
                   />
                 </div>
                 <div className="mb-[20px]">
-                  <label className="font-medium text-[16px]">Province</label>
+                  <label className="font-medium desktop:text-[16px] text-[14px]">Province</label>
                   <br />
                   <select
-                    className="h-[75px] w-full rounded-[5px] border-[1px] border-solid border-[#9F9F9F] text-[#9F9F9F] px-[20px]"
+                    className=" desktop:py-[25px] py-[15px] w-full rounded-[5px] border-[1px] border-solid border-[#9F9F9F] text-[#9F9F9F] px-[20px]"
                     name="country"
                     id="country"
                   >
@@ -150,53 +150,53 @@ const Checkout = () => {
                   </select>
                 </div>
                 <div className="mb-[20px]">
-                  <label className="font-medium text-[16px]">ZIP Code</label>
+                  <label className="font-medium desktop:text-[16px] text-[14px]">ZIP Code</label>
                   <br />
                   <input
-                    className="outline-none h-[75px] w-full rounded-[5px] border-[1px] border-solid border-[#9F9F9F] px-[20px]"
+                    className="outline-none  desktop:py-[25px] py-[15px] w-full rounded-[5px] border-[1px] border-solid border-[#9F9F9F] px-[20px]"
                     type="number"
                   />
                 </div>
                 <div className="mb-[20px]">
-                  <label className="font-medium text-[16px]">Phone</label>
+                  <label className="font-medium desktop:text-[16px] text-[14px]">Phone</label>
                   <br />
                   <input
-                    className="outline-none h-[75px] w-full rounded-[5px] border-[1px] border-solid border-[#9F9F9F] px-[20px]"
+                    className="outline-none  desktop:py-[25px] py-[15px] w-full rounded-[5px] border-[1px] border-solid border-[#9F9F9F] px-[20px]"
                     type="number"
                   />
                 </div>
                 <div className="mb-[20px]">
-                  <label className="font-medium text-[16px]">
+                  <label className="font-medium desktop:text-[16px] text-[14px]">
                     Email address
                   </label>
                   <br />
                   <input
-                    className="outline-none h-[75px] w-full rounded-[5px] border-[1px] border-solid border-[#9F9F9F] px-[20px]"
+                    className="outline-none  desktop:py-[25px] py-[15px] w-full rounded-[5px] border-[1px] border-solid border-[#9F9F9F] px-[20px]"
                     type="email"
                   />
                 </div>
                 <div className="mb-[20px]">
                   <br />
                   <input
-                    className="outline-none h-[75px] w-full rounded-[5px] border-[1px] border-solid border-[#9F9F9F] px-[20px]"
+                    className="outline-none  desktop:py-[25px] py-[15px] w-full rounded-[5px] border-[1px] border-solid border-[#9F9F9F] px-[20px]"
                     placeholder="Additional Information"
                     type="text"
                   />
                 </div>
               </form>
             </div>
-            <div className="w-[40%]">
-              <div className="flex justify-between mb-[30px]">
-                <div>
-                  <p className="font-medium text-[24px]">Product</p>
+            <div className="desktop:w-[40%] w-[95%] desktop:mx-0 mx-auto">
+              <div className="flex justify-between desktop:mb-[30px] mb-[15px]">
+                <div className="desktop:ml-0 ml-[30px]">
+                  <p className="font-medium desktop:text-[24px] text-[20px]">Product</p>
                   <p className="text-[#9F9F9F]">Asgaard sofa</p>
                   <p className="text-[#9F9F9F]">Subtotal</p>
                 </div>
                 <div>
-                  <p className="font-medium text-[24px]">Subtotal</p>
+                  <p className="font-medium desktop:text-[24px] text-[20px]">Subtotal</p>
                   <p className="font-light">Rs. 250,000.00</p>
                   <p className="font-light">Rs. 250,000.00</p>
-                  <p className="font-bold text-[24px] text-[#B88E2F]">
+                  <p className="font-bold desktop:text-[24px] text-[18px] text-[#B88E2F]">
                     Rs. 250,000.00
                   </p>
                 </div>
@@ -205,10 +205,10 @@ const Checkout = () => {
               <div className="mt-[20px]">
                 <div>
                   <div className="flex gap-[15px]">
-                    <input type="radio" name="" id="" />
-                    <label>Directoutline-none Bank Transfer</label>
+                    <input type="radio" name="" id="" checked />
+                    <label>Direct Bank Transfer</label>
                   </div>
-                  <p className="font-light text-[#9F9F9F] mb-[20px]">
+                  <p className="font-light text-[#9F9F9F] mb-[20px] desktop:w-[100%] laptop:w-[100%] w-[86%] desktop:mx-0 laptop:mx-0 mx-auto">
                     Make your payment directly into our bank account. Please use
                     your Order ID as the payment reference. Your order will not
                     be shipped until the funds have cleared in our account.
@@ -216,22 +216,22 @@ const Checkout = () => {
                 </div>
                 <div className="flex gap-[15px] mb-[15px]">
                   <input type="radio" name="" id="" />
-                  <label>Directoutline-none Bank Transfer</label>
+                  <label>Direct Bank Transfer</label>
                 </div>
                 <div className="flex gap-[15px]  mb-[25px]">
                   <input type="radio" name="" id="" />
-                  <label>Cash Ooutline-none n Delivery </label>
+                  <label>Cash Delivery </label>
                 </div>
               </div>
-              <p>
+              <p className="desktop:w-[100%] laptop:w-[100%] w-[86%] desktop:mx-0 laptop:mx-0 mx-auto">
                 Your personal data will be used to support your experience
                 throughout this website, to manage access to your account, and
                 for other purposes described in our{" "}
                 <span className="font-bold">privacy policy.</span>
               </p>
               <div className="flex justify-center mt-[30px]">
-                <button className="py-[15px] px-[40px] rounded-[8px] border-[#000000] border-[1px] cursor-pointer">
-                  <p className="text-[20px]">Place Order</p>
+                <button className="py-[15px] px-[40px] rounded-[8px] border-[#000000] border-[1px] cursor-pointer desktop:w-[60%] w-full">
+                  <p className="desktop:text-[20px] text-[16px]">Place Order</p>
                 </button>
               </div>
             </div>

@@ -28,10 +28,10 @@ const ProductDetails = () => {
   const { id } = useParams();
   const [cart, setCart] = useState(Array.isArray(savedCart) ? savedCart : []);
 
-  const product = products.find((item) => item.id.toString() === id);
-const itemInCart = cart.find((item) => item.id === product?.id);
+  const product = products?.find((item) => item.id.toString() === id);
+  const itemInCart = cart.find((item) => item.id === product?.id);
 
-const addToCart = (product) => {
+  const addToCart = (product) => {
   const updatedCart = [...cart];
   const itemIndex = updatedCart.findIndex((item) => item.id === product.id);
 
@@ -74,19 +74,19 @@ const addToCart = (product) => {
 
   return (
     <>
-      <div className=" bg-[#F9F1E7] p-[20px] mb-[40px]">
+      <div className=" bg-[#F9F1E7] desktop:p-[20px] p-[10px] desktop:mb-[40px] mb-[20px]">
         <div className="flex items-center pl-[110px] gap-[16px]">
-          <span className=" text-[#9F9F9F]">Home</span>
+          <span className=" text-[#9F9F9F] desktop:text-[16px] text-[14px]">Home</span>
           <img className="h-[8px] w-[14px]" src={RightPointer} alt="" />
-          <span className=" text-[#9F9F9F]">Shop</span>
+          <span className=" text-[#9F9F9F] desktop:text-[16px] text-[14px]">Shop</span>
           <img className="h-[8px] w-[14px]" src={RightPointer} alt="" />
           <img src={VerRule} alt="" />
-          <span>{product.name}</span>
+          <span className=" desktop:text-[16px] text-[14px]">{product.name}</span>
         </div>
       </div>
-      <div className="flex w-full items-start gap-[100px] mb-[60px]">
-        <div className="flex w-[50%] justify-end gap-[50px] items-start">
-          <div className="flex flex-col gap-[10px]">
+      <div className="flex w-full desktop:flex-row flex-col items-start desktop:gap-[100px] gap-[30px] mb-[60px]">
+        <div className="flex desktop:w-[50%] desktop:flex-row flex-col-reverse desktop:justify-end justify-center desktop:mx-[0px] mx-[auto] gap-[50px] items-start">
+          <div className="flex desktop:flex-col flex-row desktop:mx-[0px] mx-[auto] gap-[10px]">
             <img
               className="py-[5px] rounded-[7px] bg-[#f9f1e7] w-[76px] h-[80px]"
               src={sofa2}
@@ -120,26 +120,26 @@ const addToCart = (product) => {
             />
           </div>
         </div>
-        <div className="w-[50%] flex flex-col items-start gap-[5px]">
-          <h1 className="text-[42px]">{product.name}</h1>
-          <p className="text-[24px] font-[500] text-[#9F9F9F]">
+        <div className="desktop:w-[50%] flex flex-col desktop:items-start desktop:mx-[0px] mx-[30px] gap-[5px]">
+          <h1 className="desktop:text-[42px] text-[36px]">{product.name}</h1>
+          <p className="desktop:text-[24px] text-[18px] font-[500] text-[#9F9F9F]">
             Rp{product.price * 1000}.00{" "}
           </p>
-          <div className="flex gap-[16px] items-center">
+          <div className="flex desktop:gap-[16px] gap-[5px] items-center">
             <img src={product.ratingSrc} alt="" />
             <img src={VerRule} alt="" />
             <p className="text-[#9F9F9F] text-[13px]">
               {product.peopleRating} Customer Review
             </p>
           </div>
-          <p className="text-[13px] w-[55%] mt-[10px]">
+          <p className="text-[13px] desktop:w-[55%] mt-[10px]">
             Setting the bar as one of the loudest speakers in its class, the
             Kilburn is a compact, stout-hearted hero with a well-balanced audio
             which boasts a clear midrange and extended highs for a sound.
           </p>
-          <div className="mt-[15px]">
+          <div className="desktop:mt-[15px] mt-[6px]">
             <h6 className="text-[#9F9F9F] text-[14px]">Size</h6>
-            <div className="flex gap-[10px] mt-[8px] mb-[15px]">
+            <div className="flex gap-[10px] desktop:mt-[8px] mt-[4px] desktop:mb-[15px] mb-[10px]">
               <div className="text-center pt-[4px] cursor-pointer rounded-[5px] bg-[#B88E2F] text-[13px] w-[30px] h-[30px] text-[white]">
                 L
               </div>
@@ -153,7 +153,7 @@ const addToCart = (product) => {
           </div>
           <div>
             <h6 className="text-[#9F9F9F] text-[14px]">Color</h6>
-            <div className="flex gap-[10px] mt-[8px]">
+            <div className="flex gap-[10px] desktop:mt-[8px] mt-[5px]">
               {["#816DFA", "#000000", "#B88E2F"].map((color) => (
                 <div
                   key={color}
@@ -163,13 +163,13 @@ const addToCart = (product) => {
               ))}
             </div>
           </div>
-          <div className="mt-[30px] flex gap-[20px]">
-            <div className="flex items-center gap-[30px] py-[18px] px-[15px] rounded-[8px] border-[#9F9F9F] border-[1px]">
+          <div className="desktop:mt-[30px] mt-[15px] flex gap-[20px] desktop:mb-[30px] mb-[15px]">
+            <div className="flex items-center gap-[30px] desktop:py-[18px] py-[15px] desktop:px-[15px] px-[7px] rounded-[8px] border-[#9F9F9F] border-[1px]">
               <MinusIcon
                 className="w-[16px] h-[16px] cursor-pointer"
                 onClick={() => decrement(product.alt)}
               />
-              <span className="quantity text-[16px] font-[500]">
+              <span className="quantity desktop:text-[16px] text-[14px] font-[500]">
                 {itemInCart?.quantity || 0}
               </span>
               <PlusIcon
@@ -178,13 +178,13 @@ const addToCart = (product) => {
               />
             </div>
             <button
-              className="py-[18px] px-[35px] rounded-[8px] border-[#000000] border-[1px] cursor-pointer"
+              className="desktop:py-[18px] py-[15px] desktop:px-[35px] px-[25px] rounded-[8px] border-[#000000] border-[1px] cursor-pointer"
               onClick={() => addToCart(product)}
             >
-              <p className="text-[20px]">Add To Cart</p>
+              <p className="desktop:text-[20px] text-[16px]">Add To Cart</p>
             </button>
-            <div className="py-[18px] px-[35px] rounded-[8px] border-[#000000] border-[1px] cursor-pointer">
-              <p className="text-[20px] flex items-center gap-[20px]">
+            <div className="desktop:py-[18px] py-[15px] desktop:px-[35px] px-[25px] rounded-[8px] border-[#000000] border-[1px] cursor-pointer">
+              <p className="desktop:text-[20px] text-[16px] flex items-center gap-[20px]">
                 <PlusIcon className="w-[16px] h-[16px] cursor-pointer" />
                 Compare
               </p>
@@ -192,7 +192,7 @@ const addToCart = (product) => {
           </div>
           <pre>
             <hr />
-            <p className="uppercase text-[#9F9F9F]">sku : SS001</p>
+            <p className="uppercase text-[#9F9F9F] desktop:mt-[30px] mt-[15px]">sku : SS001</p>
             <p className="text-[#9F9F9F]">Category : {product.category}</p>
             <p className="text-[#9F9F9F]">Tags :</p>
             <div className="flex">
@@ -208,18 +208,18 @@ const addToCart = (product) => {
       </div>
       <hr />
       <div>
-        <div className="flex my-[30px] items-center justify-center gap-[50px]">
-          <h1 className="text-[24px] font-[500] ">Description</h1>
-          <h1 className="text-[24px] text-[#9F9F9F]">Additional Information</h1>
-          <h1 className="text-[24px] text-[#9F9F9F]">Reviews(5)</h1>
+        <div className="flex my-[30px] items-center justify-evenly gap-[50px]">
+          <h1 className="desktop:text-[24px] text-[20px] font-[500] ">Description</h1>
+          <h1 className="desktop:text-[24px] text-[20px] text-[#9F9F9F]">Additional Information</h1>
+          <h1 className="desktop:text-[24px] text-[20px] text-[#9F9F9F]">Reviews(5)</h1>
         </div>
-        <div className="w-[67%] m-[auto]">
-          <p className="text-[#9F9F9F] text-[16px] mb-[20px]">
+        <div className="desktop:w-[67%] w-[82%] m-[auto]">
+          <p className="text-[#9F9F9F] desktop:text-[16px] text-[14px] desktop:mb-[20px] mb-[10px]">
             Embodying the raw, wayward spirit of rock ‘n’ roll, the Kilburn
             portable active stereo speaker takes the unmistakable look and sound
             of Marshall, unplugs the chords, and takes the show on the road.
           </p>
-          <p className="text-[#9F9F9F] text-[16px]">
+          <p className="text-[#9F9F9F] desktop:text-[16px] text-[14px]">
             Weighing in under 7 pounds, the Kilburn is a lightweight piece of
             vintage styled engineering. Setting the bar as one of the loudest
             speakers in its class, the Kilburn is a compact, stout-hearted hero
@@ -232,10 +232,10 @@ const addToCart = (product) => {
         </div>
         <div className="flex w-full items-center gap-[30px] mt-[40px] mb-[60px]">
           <div className="w-[50%] px-[5px] bg-[#f9f1e7] rounded-[15px] ml-[75px]">
-            <img className="w-[657px] h-[436px]" src={WhiteSofa1} alt="" />
+            <img className="w-[657px] desktop:h-[436px] h-[250px]" src={WhiteSofa1} alt="" />
           </div>
           <div className="w-[50%] px-[5px] bg-[#f9f1e7] rounded-[15px] mr-[75px]">
-            <img className="w-[657px] h-[436px]" src={WhiteSofa2} alt="" />
+            <img className="w-[657px] desktop:h-[436px] h-[250px]" src={WhiteSofa2} alt="" />
           </div>
         </div>
       </div>
@@ -250,7 +250,7 @@ const addToCart = (product) => {
               length: Math.ceil(visibleCount / productsPerRow),
             }).map((_, rowIndex) => (
               <div
-                className="flex gap-[20px] w-[100%] justify-center"
+                className="rows gap-[20px] w-[100%] justify-center"
                 key={rowIndex}
               >
                 {seeMore
